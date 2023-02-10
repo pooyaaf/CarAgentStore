@@ -8,5 +8,10 @@
 "username": "user2", 
 "password": "pass2", 
 "wallet": 35000 
+} ,
+{ 
+"username": "user3", 
+"password": "pass3", 
+"wallet": 35000 
 } 
 ]

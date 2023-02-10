@@ -1,6 +1,7 @@
-
+// Car.hpp 
+#ifndef CAR_HPP 
+#define CAR_HPP 
 #include <string> 
-#include "User.hpp"
 
 class Car { 
   private: 
@@ -20,4 +21,6 @@ class Car {
     void setPrice(float price); 
     void setCount(int count); 
     int getNumAvailable();
+
 };
+#endif

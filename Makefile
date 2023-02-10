@@ -129,6 +129,78 @@ CarAgencyProgram/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CarAgencyProgram.dir/build.make CMakeFiles/CarAgencyProgram.dir/build
 .PHONY : CarAgencyProgram/fast
 
+Car.o: Car.cpp.o
+.PHONY : Car.o
+
+# target to build an object file
+Car.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CarAgencyProgram.dir/build.make CMakeFiles/CarAgencyProgram.dir/Car.cpp.o
+.PHONY : Car.cpp.o
+
+Car.i: Car.cpp.i
+.PHONY : Car.i
+
+# target to preprocess a source file
+Car.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CarAgencyProgram.dir/build.make CMakeFiles/CarAgencyProgram.dir/Car.cpp.i
+.PHONY : Car.cpp.i
+
+Car.s: Car.cpp.s
+.PHONY : Car.s
+
+# target to generate assembly for a file
+Car.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CarAgencyProgram.dir/build.make CMakeFiles/CarAgencyProgram.dir/Car.cpp.s
+.PHONY : Car.cpp.s
+
+CarAgency.o: CarAgency.cpp.o
+.PHONY : CarAgency.o
+
+# target to build an object file
+CarAgency.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CarAgencyProgram.dir/build.make CMakeFiles/CarAgencyProgram.dir/CarAgency.cpp.o
+.PHONY : CarAgency.cpp.o
+
+CarAgency.i: CarAgency.cpp.i
+.PHONY : CarAgency.i
+
+# target to preprocess a source file
+CarAgency.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CarAgencyProgram.dir/build.make CMakeFiles/CarAgencyProgram.dir/CarAgency.cpp.i
+.PHONY : CarAgency.cpp.i
+
+CarAgency.s: CarAgency.cpp.s
+.PHONY : CarAgency.s
+
+# target to generate assembly for a file
+CarAgency.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CarAgencyProgram.dir/build.make CMakeFiles/CarAgencyProgram.dir/CarAgency.cpp.s
+.PHONY : CarAgency.cpp.s
+
+User.o: User.cpp.o
+.PHONY : User.o
+
+# target to build an object file
+User.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CarAgencyProgram.dir/build.make CMakeFiles/CarAgencyProgram.dir/User.cpp.o
+.PHONY : User.cpp.o
+
+User.i: User.cpp.i
+.PHONY : User.i
+
+# target to preprocess a source file
+User.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CarAgencyProgram.dir/build.make CMakeFiles/CarAgencyProgram.dir/User.cpp.i
+.PHONY : User.cpp.i
+
+User.s: User.cpp.s
+.PHONY : User.s
+
+# target to generate assembly for a file
+User.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CarAgencyProgram.dir/build.make CMakeFiles/CarAgencyProgram.dir/User.cpp.s
+.PHONY : User.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -162,6 +234,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... CarAgencyProgram"
+	@echo "... Car.o"
+	@echo "... Car.i"
+	@echo "... Car.s"
+	@echo "... CarAgency.o"
+	@echo "... CarAgency.i"
+	@echo "... CarAgency.s"
+	@echo "... User.o"
+	@echo "... User.i"
+	@echo "... User.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

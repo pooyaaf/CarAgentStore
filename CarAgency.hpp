@@ -1,11 +1,16 @@
 
+// CarAgency.hpp
+#ifndef CarAgency_HPP
+#define CarAgency_HPP
+
 #include <iostream> 
 #include <vector> 
 #include <fstream> 
 #include <json/json.h> 
 // #include "Car.hpp" 
 #include "User.hpp" 
- 
+#include "Car.hpp"
+
 class CarAgency { 
   private: 
     std::vector<Car> cars; 
@@ -23,4 +28,6 @@ class CarAgency {
     bool buyCar(User &user, const std::string &model); 
     void addCarsFromFile(const std::string &fileName); 
     void addUsersFromFile(const std::string &fileName); 
+    void writeUsersToFile(std::string filename);
 };
+#endif

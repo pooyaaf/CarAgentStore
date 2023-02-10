@@ -1,13 +1,15 @@
 
 #include <iostream>
-#include <fstream> 
+#include <fstream>
 #include <vector>
 #include "json/json.h"
 #include "CarAgency.hpp"
 #include "Car.hpp"
 #include "User.hpp"
 
-CarAgency::CarAgency(){}
+using namespace std;
+
+CarAgency::CarAgency() {}
 
 void CarAgency::addCar(const Car &car)
 {
@@ -22,9 +24,12 @@ void CarAgency::addUser(const User &user)
 void CarAgency::showCars() const
 {
     std::cout << "Available cars: " << std::endl;
-    for (int i = 0; i < cars.size(); i++)
+    for (auto &car : cars)
     {
-        std::cout << i + 1 << ". " << cars[i].getModel() << " (" << cars[i].getCount() << " available)" << std::endl;
+        if (car.getCount() > 0)
+        {
+            cout << car.getModel() << "\t" << car.getCount() << "\t" << car.getPrice() << endl;
+        }
     }
 }
 
@@ -78,6 +83,7 @@ Car &CarAgency::findCar(const std::string &model)
     exit(1);
 }
 
+
 bool CarAgency::buyCar(User &user, const std::string &model)
 {
     Car &car = findCar(model);
@@ -91,10 +97,16 @@ bool CarAgency::buyCar(User &user, const std::string &model)
         std::cout << "Error: Not enough balance\n";
         return false;
     }
-    user.setWallet(user.getWallet() - car.getPrice());
-    car.setCount(car.getCount() - 1);
-    user.addOwnedCar(car);
-    std::cout << "Car purchased successfully\n";
+    if (car.getCount() > 0)
+    {
+        car.setCount(car.getCount() - 1);
+        user.setWallet(user.getWallet() - car.getPrice());
+        user.addPurchasedCars(car.getModel());
+        std::cout << "Car purchased successfully\n";
+    }
+
+    // user.addOwnedCar(car);
+
     return true;
 }
 
@@ -130,6 +142,7 @@ void CarAgency::addUsersFromFile(const std::string &fileName)
     }
     Json::Value root;
     Json::Reader reader;
+
     if (!reader.parse(file, root))
     {
         std::cout << "Error: Unable to parse JSON\n";
@@ -138,5 +151,15 @@ void CarAgency::addUsersFromFile(const std::string &fileName)
     for (const auto &user : root)
     {
         addUser(User(user["username"].asString(), user["password"].asString(), user["wallet"].asInt()));
+    }
+}
+
+void CarAgency::writeUsersToFile(std::string filename)
+{
+
+    for (auto user : users)
+    {
+        // std::cout<<user.getUsername()<<" "<<user.getWallet();
+        user.writePurchasedCarsToFile(filename);
     }
 }

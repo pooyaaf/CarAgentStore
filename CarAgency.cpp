@@ -163,3 +163,34 @@ void CarAgency::writeUsersToFile(std::string filename)
         user.writePurchasedCarsToFile(filename);
     }
 }
+
+void CarAgency::updatePurchasedCar(const std::string &filename, std::string carModel, const std::string &userName) {
+    // Open the json file
+    std::ifstream file(filename);
+    Json::Value data;
+    Json::Reader reader;
+
+    // Parse the json data
+    if (reader.parse(file, data)) {
+        // Modify the json data
+        for (auto &car : data["cars"]) {
+            if (car["model"] == carModel) {
+                car["count"] = car["count"].asInt()- 1;
+                break;
+            }
+        }
+
+        // for (auto &user : data["users"]) {
+        //     if (user["username"] == userName) {
+        //         user["purchasedCars"].append(carId);
+        //         break;
+        //     }
+        // }
+    }
+    file.close();
+
+    // Write the updated json data back to the file
+    std::ofstream outputFile(filename);
+    outputFile << data.toStyledString();
+    outputFile.close();
+}

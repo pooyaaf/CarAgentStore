@@ -8,10 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/pooya/Desktop/CarAgentStore/Car.cpp" "CMakeFiles/CarAgencyProgram.dir/Car.cpp.o" "gcc" "CMakeFiles/CarAgencyProgram.dir/Car.cpp.o.d"
-  "/home/pooya/Desktop/CarAgentStore/CarAgency.cpp" "CMakeFiles/CarAgencyProgram.dir/CarAgency.cpp.o" "gcc" "CMakeFiles/CarAgencyProgram.dir/CarAgency.cpp.o.d"
-  "/home/pooya/Desktop/CarAgentStore/User.cpp" "CMakeFiles/CarAgencyProgram.dir/User.cpp.o" "gcc" "CMakeFiles/CarAgencyProgram.dir/User.cpp.o.d"
-  "/home/pooya/Desktop/CarAgentStore/main.cpp" "CMakeFiles/CarAgencyProgram.dir/main.cpp.o" "gcc" "CMakeFiles/CarAgencyProgram.dir/main.cpp.o.d"
+  "/home/pooya/Desktop/CarAgentStore-master/Car.cpp" "CMakeFiles/CarAgencyProgram.dir/Car.cpp.o" "gcc" "CMakeFiles/CarAgencyProgram.dir/Car.cpp.o.d"
+  "/home/pooya/Desktop/CarAgentStore-master/CarAgency.cpp" "CMakeFiles/CarAgencyProgram.dir/CarAgency.cpp.o" "gcc" "CMakeFiles/CarAgencyProgram.dir/CarAgency.cpp.o.d"
+  "/home/pooya/Desktop/CarAgentStore-master/User.cpp" "CMakeFiles/CarAgencyProgram.dir/User.cpp.o" "gcc" "CMakeFiles/CarAgencyProgram.dir/User.cpp.o.d"
+  "/home/pooya/Desktop/CarAgentStore-master/main.cpp" "CMakeFiles/CarAgencyProgram.dir/main.cpp.o" "gcc" "CMakeFiles/CarAgencyProgram.dir/main.cpp.o.d"
   )
 
 # Targets to which this target links.

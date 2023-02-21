@@ -25,6 +25,7 @@ public:
     void setWallet(int wallet);
     std::vector<Car> &getOwnedCars();
     void addOwnedCar(Car &car);
+    void showOwnedCars() const;
     void addPurchasedCars(std::string model);
     bool checkPassword(const std::string &password) const;
     void writePurchasedCarsToFile(std::string filename);

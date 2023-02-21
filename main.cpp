@@ -10,7 +10,6 @@
 
 using namespace std;
 
-
 int main()
 {
     CarAgency agency;
@@ -27,7 +26,8 @@ int main()
         if (loggedInUser)
         {
             cout << "3. Purchase a Car" << endl;
-            cout << "4. Show Wallet"<<endl;
+            cout << "4. Show Wallet" << endl;
+            cout << "5. Show Purchased Cars" << endl;
         }
         cout << "Enter your choice: ";
         cin >> userChoice;
@@ -107,9 +107,14 @@ int main()
             }
             break;
         }
-           case 4:
+        case 4:
         {
-            cout<<loggedInUser->getWallet()<<endl;
+            cout << loggedInUser->getWallet() << endl;
+            break;
+        }
+        case 5:
+        {
+            loggedInUser->showOwnedCars();
             break;
         }
         default:

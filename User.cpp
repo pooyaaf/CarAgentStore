@@ -6,7 +6,10 @@
 #include <string>
 #include <vector>
 #include <fstream>
+#include <iostream>
 #include "json/json.h"
+
+using namespace std;
 
 User::User(const std::string &username, const std::string &password, int wallet) : username(username), password(password), wallet(wallet) {}
 
@@ -44,6 +47,15 @@ void User::addOwnedCar(Car &car)
 {
     ownedCars.push_back(car);
 }
+void User::showOwnedCars() const{
+    std::cout << "Owned cars for " << this->username<<":\n";
+    for(const auto &carModel : purchasedCars){
+        std::cout<<"- "<< carModel<<"\n";
+    }
+    std::cout<<"\n";
+
+}
+
 void User::addPurchasedCars(std::string model)
 {
     purchasedCars.push_back(model);

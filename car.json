@@ -1,14 +1,14 @@
-    {
-        "Mercedes": {
-            "model": "Mercedes",
-            "year": 2019,
-            "price": 35000,
-            "count": 5
-        },
-        "BMW": {
+{
+    "Mercedes": {
+        "model": "Mercedes",
+        "year": 2019,
+        "price": 35000,
+        "count": 5
+    },
+    "BMW": {
         "model": "BMW",
         "year": 2019,
         "price": 3500,
         "count": 3
     }
-    }
+}

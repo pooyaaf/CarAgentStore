@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -13,8 +12,8 @@ using namespace std;
 int main()
 {
     CarAgency agency;
-    agency.addCarsFromFile("../car.json");
-    agency.addUsersFromFile("../user.json");
+    agency.addCarsFromFile("cars.json");
+    agency.addUsersFromFile("users.json");
 
     int userChoice = 0;
     User *loggedInUser = nullptr;
@@ -83,7 +82,7 @@ int main()
                         if (agency.buyCar(*loggedInUser, model))
                         {
                             cout << "Car purchased successfully" << endl;
-                            agency.writeUsersToFile("../user_purchases.json");
+                            agency.writeUsersToFile("users_purchases.json");
                             // readPurchasedCarsFromFile();
                         }
                         else

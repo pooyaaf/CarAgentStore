@@ -1,4 +1,3 @@
-
 // User.hpp
 #ifndef USER_HPP
 #define USER_HPP
@@ -6,6 +5,7 @@
 #include <string>
 #include <vector>
 #include "Car.hpp"
+#include "json/json.h"
 
 class User
 {
@@ -17,13 +17,14 @@ private:
     std::vector<std::string> purchasedCars;
 
 public:
-    User(const std::string &username, const std::string &password, int wallet);
+    User(const Json::Value &userData);
     std::string getUsername() const;
     std::string getPassword() const;
     int getWallet() const;
     void setPassword(const std::string &password);
     void setWallet(int wallet);
-    std::vector<Car> &getOwnedCars();
+    std::vector<Car> &getOwnedCars() ;
+    const std::vector<Car> &getCars() const;
     void addOwnedCar(Car &car);
     void showOwnedCars() const;
     void addPurchasedCars(std::string model);
@@ -33,4 +34,3 @@ public:
 };
 
 #endif
-

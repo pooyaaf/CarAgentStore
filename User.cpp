@@ -1,105 +1,100 @@
-
-// User.cpp
 #include "User.hpp"
-#include "Car.hpp"
-#include <algorithm>
-#include <string>
-#include <vector>
-#include <fstream>
 #include <iostream>
-#include "json/json.h"
+#include <fstream>
+#include <algorithm>
+#include <stdexcept>
+#include <json/json.h>
 
-using namespace std;
+User::User(const Json::Value &userData) {
+    this->username = userData["username"].asString();
+    this->password = userData["password"].asString();
+    this->wallet = userData["wallet"].asInt();
 
-User::User(const std::string &username, const std::string &password, int wallet) : username(username), password(password), wallet(wallet) {}
-
-std::string User::getUsername() const
-{
-    return username;
+    Json::Value carModels = userData["cars"];
+    for (int i = 0; i < carModels.size(); ++i) {
+        this->purchasedCars.push_back(carModels[i].asString());
+    }
 }
 
-std::string User::getPassword() const
-{
-    return password;
+std::string User::getUsername() const {
+    return this->username;
 }
 
-int User::getWallet() const
-{
-    return wallet;
+std::string User::getPassword() const {
+    return this->password;
 }
 
-void User::setPassword(const std::string &password)
-{
+int User::getWallet() const {
+    return this->wallet;
+}
+
+void User::setPassword(const std::string &password) {
     this->password = password;
 }
 
-void User::setWallet(int wallet)
-{
+void User::setWallet(int wallet) {
     this->wallet = wallet;
 }
-
-std::vector<Car> &User::getOwnedCars()
-{
+std::vector<Car> &User::getOwnedCars() {
+    return this->ownedCars;
+}
+const std::vector<Car>& User::getCars() const {
     return ownedCars;
 }
 
-void User::addOwnedCar(Car &car)
-{
-    ownedCars.push_back(car);
+void User::addOwnedCar(Car &car) {
+    this->ownedCars.push_back(car);
 }
-void User::showOwnedCars() const{
-    std::cout << "Owned cars for " << this->username<<":\n";
-    for(const auto &carModel : purchasedCars){
-        std::cout<<"- "<< carModel<<"\n";
+
+
+void User::showOwnedCars() const {
+    if (this->ownedCars.empty()) {
+        std::cout << "You don't own any cars yet." << std::endl;
+    } else {
+        std::cout << "Your owned cars:" << std::endl;
+        for (int i = 0; i < this->ownedCars.size(); ++i) {
+            std::cout << "- " << this->ownedCars[i].getModel() << std::endl;
+        }
     }
-    std::cout<<"\n";
-
 }
 
-void User::addPurchasedCars(std::string model)
-{
-    purchasedCars.push_back(model);
+void User::addPurchasedCars(std::string model) {
+    this->purchasedCars.push_back(model);
 }
 
-bool User::checkPassword(const std::string &password) const
-{
+bool User::checkPassword(const std::string &password) const {
     return this->password == password;
 }
-void User::writePurchasedCarsToFile(std::string filename)
-{
-    Json::Value userData;
-    userData["username"] = username;
-    userData["password"] = password;
-    userData["wallet"] = wallet;
-    Json::Value purchasedCarModels(Json::arrayValue);
-    for (auto car : purchasedCars)
-    {
-        purchasedCarModels.append(car);
-    }
-    userData["purchasedCars"] = purchasedCarModels;
-    //
-    std::ofstream file(filename, std::ios::app);
-    file << userData;
-    file.close();
-}
-void User::readPurchasedCarsFromFile(const std::string &filename)
-{
-    std::ifstream file(filename);
-    if (file.is_open())
-    {
-        Json::Value data;
-        file >> data;
 
-        for (auto &userData : data["users"])
-        {
-            if (userData["username"] == this->username)
-            {
-                for (auto &carModel : userData["purchasedCars"])
-                {
-                    this->purchasedCars.push_back(carModel.asString());
-                }
-                break;
-            }
+void User::writePurchasedCarsToFile(std::string filename) {
+    std::ofstream file(filename);
+    if (file.is_open()) {
+        Json::Value root;
+        Json::Value carModels(Json::arrayValue);
+        for (int i = 0; i < this->purchasedCars.size(); ++i) {
+            carModels.append(this->purchasedCars[i]);
         }
+        root["cars"] = carModels;
+        file << root;
+        file.close();
+        std::cout << "Purchased cars saved to file." << std::endl;
+    } else {
+        std::cerr << "Failed to open file: " << filename << std::endl;
+    }
+}
+
+void User::readPurchasedCarsFromFile(const std::string &filename) {
+    std::ifstream file(filename);
+    if (file.is_open()) {
+        Json::Value root;
+        file >> root;
+        Json::Value carModels = root["cars"];
+        for (int i = 0; i < carModels.size(); ++i) {
+            this->purchasedCars.push_back(carModels[i].asString());
+        }
+        file.close();
+        std::cout << "Purchased cars loaded from file." << std::endl;
+    } else {
+        std::cerr << "Failed to open file: " << filename << std::endl;
     }
 }

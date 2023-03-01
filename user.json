@@ -1,17 +1,20 @@
-[ 
-{ 
-"username": "user1", 
-"password": "pass1", 
-"wallet": 350000 
-}, 
-{ 
-"username": "user2", 
-"password": "pass2", 
-"wallet": 35000 
-} ,
-{ 
-"username": "user3", 
-"password": "pass3", 
-"wallet": 35000 
-} 
-]
+{
+    "user1": {
+        "username": "user1",
+        "password": "pass1",
+        "wallet": 275000,
+        "cars": []
+    },
+    "user2": {
+        "username": "user2",
+        "password": "pass2",
+        "wallet": 35000,
+        "cars": []
+    },
+    "user3": {
+        "username": "user3",
+        "password": "pass3",
+        "wallet": 35000,
+        "cars": []
+    }
+}

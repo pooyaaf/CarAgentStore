@@ -12,8 +12,8 @@ using namespace std;
 int main()
 {
     CarAgency agency;
-    agency.addCarsFromFile("cars.json");
-    agency.addUsersFromFile("users.json");
+    agency.addCarsFromFile("../car.json");
+    agency.addUsersFromFile("../user.json");
 
     int userChoice = 0;
     User *loggedInUser = nullptr;
@@ -113,7 +113,7 @@ int main()
         }
         case 5:
         {
-            loggedInUser->showOwnedCars();
+            loggedInUser->showPurchasedCars();
             break;
         }
         default:

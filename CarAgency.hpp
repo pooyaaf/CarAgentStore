@@ -29,6 +29,7 @@ class CarAgency {
     void addCarsFromFile(const std::string &fileName); 
     void addUsersFromFile(const std::string &fileName); 
     void writeUsersToFile(std::string filename);
+    double getUserWallet(const std::string& filename, const std::string& userName);
     void updatePurchasedCar(const std::string &filename, std::string carModel, const std::string &userName) ;
 };
 #endif

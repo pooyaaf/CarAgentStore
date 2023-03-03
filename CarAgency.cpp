@@ -156,6 +156,29 @@ void CarAgency::writeUsersToFile(std::string filename) {
     }
 }
 
+
+double CarAgency::getUserWallet(const std::string& filename, const std::string& userName) {
+    Json::Value data;
+    std::ifstream file(filename);
+
+    if (file.is_open()) {
+        file >> data;
+        file.close();
+    } else {
+        std::cout << "Error: Unable to open file\n";
+        return -1;
+    }
+
+    Json::Value userData = data[userName];
+    if (userData.isNull()) {
+        std::cout << "Error: User not found\n";
+        return -1;
+    }
+
+    return userData["wallet"].asDouble();
+}
+
+
 void CarAgency::updatePurchasedCar(const std::string &filename, std::string carModel, const std::string &userName) {
     Json::Value data;
     std::ifstream file(filename);
@@ -175,6 +198,8 @@ void CarAgency::updatePurchasedCar(const std::string &filename, std::string carM
     }
 
     userData["cars"].append(carModel);
+    userData["wallet"] = getUserWallet(filename, userName);
+
     data[userName] = userData;
 
     std::ofstream outfile(filename);

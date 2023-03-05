@@ -23,6 +23,7 @@ public:
     int getWallet() const;
     void setPassword(const std::string &password);
     void setWallet(int wallet);
+    void setOwnedCars(const std::vector<Car>& cars);
     const std::vector<Car>& getOwnedCars() const;
     void addOwnedCar(Car &car);
     void showPurchasedCars() const;

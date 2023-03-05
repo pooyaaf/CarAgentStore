@@ -1,20 +1,74 @@
 {
-    "user1": {
-        "username": "user1",
-        "password": "pass1",
-        "wallet": 275000,
-        "cars": []
+	"user1" : 
+	{
+		"cars" : 
+		[
+			"BMW"
+		],
+		"password" : "pass1",
+		"username" : "user1",
+		"wallet" : 235000
+	},
+	"user2" : 
+	{
+		"cars" : 
+		[
+			"Mercedes"
+		],
+		"password" : "pass2",
+		"username" : "user2",
+		"wallet" : 0
+	},
+	"user3" : 
+	{
+		"cars" : 
+		[
+			"Nissan"
+		],
+		"password" : "pass3",
+		"username" : "user3",
+		"wallet" : 15000
+	},
+    "user4": {
+        "cars": ["Audi"],
+        "password": "pass4",
+        "username": "user4",
+        "wallet": 50000
     },
-    "user2": {
-        "username": "user2",
-        "password": "pass2",
-        "wallet": 35000,
-        "cars": []
+    "user5": {
+        "cars": ["Toyota", "Honda"],
+        "password": "pass5",
+        "username": "user5",
+        "wallet": 100000
     },
-    "user3": {
-        "username": "user3",
-        "password": "pass3",
-        "wallet": 35000,
-        "cars": []
+    "user6": {
+        "cars": ["Ford"],
+        "password": "pass6",
+        "username": "user6",
+        "wallet": 75000
+    },
+    "user7": {
+        "cars": ["Nissan"],
+        "password": "pass7",
+        "username": "user7",
+        "wallet": 30000
+    },
+    "user8": {
+        "cars": ["Hyundai", "Kia"],
+        "password": "pass8",
+        "username": "user8",
+        "wallet": 90000
+    },
+    "user9": {
+        "cars": ["Chevrolet"],
+        "password": "pass9",
+        "username": "user9",
+        "wallet": 40000
+    },
+    "user10": {
+        "cars": ["Mazda"],
+        "password": "pass10",
+        "username": "user10",
+        "wallet": 60000
     }
 }

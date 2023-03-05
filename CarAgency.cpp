@@ -70,7 +70,7 @@ Car& CarAgency::findCar(const std::string &model)
     return *car;
 }
 
-bool CarAgency::buyCar(User &user, const std::string &model)
+bool CarAgency::buyCar(User &user, const std::string &model,const std::string &filename)
 {
     if (!checkCarExists(model))
     {
@@ -81,12 +81,22 @@ bool CarAgency::buyCar(User &user, const std::string &model)
     {
         return false;
     }
+
+    std::vector<Car> ownedCars = user.getOwnedCars();
+    ownedCars.push_back(car);
+
     user.setWallet(user.getWallet() - car.getPrice());
     car.setCount(car.getCount() - 1);
-    user.addOwnedCar(car);
+    user.setOwnedCars(ownedCars);
     user.addPurchasedCars(car.getModel());
+    user.writePurchasedCarsToFile(filename);
+    std::vector<Json::String> ownedCarModels;
+    std::transform(ownedCars.begin(), ownedCars.end(), std::back_inserter(ownedCarModels), [](const Car& car){ return Json::String(car.getModel()); });
+    car = Car(car.getModel(), car.getYear(), car.getPrice(), car.getCount(), ownedCarModels);
+
     return true;
 }
+
 
 void CarAgency::addCarsFromFile(const std::string &fileName)
 {

@@ -1,1 +1,56 @@
-[  {    "model": "Mercedes",    "year": 2019,    "price": 35000,    "count": 5  },  {    "model": "BMW",    "year": 2020,    "price": 40000,    "count": 3  }]
+[ 
+    {
+        "model": "Mercedes",
+        "year": 2019,
+        "price": 35000,
+        "count": 5
+    },
+    {
+        "model": "BMW",
+        "year": 2020,
+        "price": 40000,
+        "count": 3
+    },
+    {
+        "model": "Audi",
+        "year": 2021,
+        "price": 45000,
+        "count": 7
+    },
+    {
+        "model": "Toyota",
+        "year": 2020,
+        "price": 25000,
+        "count": 12
+    },
+    {
+        "model": "Honda",
+        "year": 2022,
+        "price": 30000,
+        "count": 8
+    },
+    {
+        "model": "Ford",
+        "year": 2021,
+        "price": 35000,
+        "count": 6
+    },
+    {
+        "model": "Nissan",
+        "year": 2019,
+        "price": 20000,
+        "count": 10
+    },
+    {
+        "model": "Hyundai",
+        "year": 2022,
+        "price": 28000,
+        "count": 9
+    },
+    {
+        "model": "Kia",
+        "year": 2020,
+        "price": 26000,
+        "count": 11
+    }
+]

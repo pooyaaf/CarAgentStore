@@ -37,6 +37,10 @@ void User::setWallet(int wallet)
     this->wallet = wallet;
 }
 
+void User::setOwnedCars(const std::vector<Car>& cars) {
+    ownedCars = cars;
+}
+
 const std::vector<Car>& User::getOwnedCars() const {
     return ownedCars;
 }

@@ -3,11 +3,21 @@
 	{
 		"cars" : 
 		[
-			"BMW"
+			"Kia"
 		],
 		"password" : "pass1",
 		"username" : "user1",
-		"wallet" : 235000
+		"wallet" : 209000
+	},
+	"user10" : 
+	{
+		"cars" : 
+		[
+			"Mazda"
+		],
+		"password" : "pass10",
+		"username" : "user10",
+		"wallet" : 60000
 	},
 	"user2" : 
 	{
@@ -29,46 +39,66 @@
 		"username" : "user3",
 		"wallet" : 15000
 	},
-    "user4": {
-        "cars": ["Audi"],
-        "password": "pass4",
-        "username": "user4",
-        "wallet": 50000
-    },
-    "user5": {
-        "cars": ["Toyota", "Honda"],
-        "password": "pass5",
-        "username": "user5",
-        "wallet": 100000
-    },
-    "user6": {
-        "cars": ["Ford"],
-        "password": "pass6",
-        "username": "user6",
-        "wallet": 75000
-    },
-    "user7": {
-        "cars": ["Nissan"],
-        "password": "pass7",
-        "username": "user7",
-        "wallet": 30000
-    },
-    "user8": {
-        "cars": ["Hyundai", "Kia"],
-        "password": "pass8",
-        "username": "user8",
-        "wallet": 90000
-    },
-    "user9": {
-        "cars": ["Chevrolet"],
-        "password": "pass9",
-        "username": "user9",
-        "wallet": 40000
-    },
-    "user10": {
-        "cars": ["Mazda"],
-        "password": "pass10",
-        "username": "user10",
-        "wallet": 60000
-    }
+	"user4" : 
+	{
+		"cars" : 
+		[
+			"Kia"
+		],
+		"password" : "pass4",
+		"username" : "user4",
+		"wallet" : 24000
+	},
+	"user5" : 
+	{
+		"cars" : 
+		[
+			"Toyota",
+			"Honda"
+		],
+		"password" : "pass5",
+		"username" : "user5",
+		"wallet" : 100000
+	},
+	"user6" : 
+	{
+		"cars" : 
+		[
+			"Ford"
+		],
+		"password" : "pass6",
+		"username" : "user6",
+		"wallet" : 75000
+	},
+	"user7" : 
+	{
+		"cars" : 
+		[
+			"Nissan"
+		],
+		"password" : "pass7",
+		"username" : "user7",
+		"wallet" : 30000
+	},
+	"user8" : 
+	{
+		"cars" : 
+		[
+			"Hyundai",
+			"Kia"
+		],
+		"password" : "pass8",
+		"username" : "user8",
+		"wallet" : 90000
+	},
+	"user9" : 
+	{
+		"cars" : 
+		[
+			"Chevrolet"
+		],
+		"password" : "pass9",
+		"username" : "user9",
+		"wallet" : 40000
+	}
 }

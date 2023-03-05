@@ -83,7 +83,7 @@ int main()
                     Car &car = agency.findCar(model);
                     if (loggedInUser->getWallet() >= car.getPrice())
                     {
-                        if (agency.buyCar(*loggedInUser, model, pathOfUsersJSON))
+                        if (agency.buyCar(*loggedInUser, model, pathOfUsersJSON,pathOfCarsJSON))
                         {
                             cout << "Car purchased successfully" << endl;
                         }

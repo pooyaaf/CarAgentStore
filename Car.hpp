@@ -25,5 +25,7 @@ public:
   void setCount(int count);
   int getNumAvailable();
   const std::vector<std::string> &getOwnedCars() const;
+  void updateJSONFile(const std::string &filename) const;
+
 };
 #endif

@@ -1,5 +1,8 @@
 
 #include "Car.hpp"
+#include <fstream>
+#include <iostream>
+#include "json/json.h"
 
 Car::Car(const std::string &model, int year, float price, int count, const std::vector<std::string> &ownedCars)
     : model(model), year(year), price(price), count(count), ownedCars(ownedCars) {}
@@ -51,4 +54,19 @@ void Car::setCount(int count)
 int Car::getNumAvailable()
 {
   return count;
+}
+void Car::updateJSONFile(const std::string &filename) const {
+    Json::Value root;
+    std::ifstream file(filename);
+    file >> root;
+
+    for (auto& car : root) {
+        if (car["model"].asString() == model) {
+            car["count"] = count;
+            break;
+        }
+    }
+
+    std::ofstream outFile(filename, std::ofstream::trunc);
+    outFile << root;
 }

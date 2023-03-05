@@ -1,4 +1,3 @@
-
 // User.cpp
 #include "User.hpp"
 #include "Car.hpp"
@@ -38,8 +37,11 @@ void User::setWallet(int wallet)
     this->wallet = wallet;
 }
 
-std::vector<Car> &User::getOwnedCars()
-{
+void User::setOwnedCars(const std::vector<Car>& cars) {
+    ownedCars = cars;
+}
+
+const std::vector<Car>& User::getOwnedCars() const {
     return ownedCars;
 }
 
@@ -47,13 +49,15 @@ void User::addOwnedCar(Car &car)
 {
     ownedCars.push_back(car);
 }
-void User::showOwnedCars() const{
-    std::cout << "Owned cars for " << this->username<<":\n";
-    for(const auto &carModel : purchasedCars){
-        std::cout<<"- "<< carModel<<"\n";
-    }
-    std::cout<<"\n";
 
+void User::showPurchasedCars() const
+{
+    std::cout << "Purchased cars for " << this->username << ":\n";
+    for (const auto &carModel : purchasedCars)
+    {
+        std::cout << "- " << carModel << "\n";
+    }
+    std::cout << "\n";
 }
 
 void User::addPurchasedCars(std::string model)
@@ -65,8 +69,16 @@ bool User::checkPassword(const std::string &password) const
 {
     return this->password == password;
 }
+
 void User::writePurchasedCarsToFile(std::string filename)
 {
+    Json::Value fileData;
+    std::ifstream inputFile(filename);
+    if (inputFile.is_open())
+    {
+        inputFile >> fileData;
+    }
+
     Json::Value userData;
     userData["username"] = username;
     userData["password"] = password;
@@ -76,30 +88,31 @@ void User::writePurchasedCarsToFile(std::string filename)
     {
         purchasedCarModels.append(car);
     }
-    userData["purchasedCars"] = purchasedCarModels;
-    //
-    std::ofstream file(filename, std::ios::app);
-    file << userData;
-    file.close();
+    userData["cars"] = purchasedCarModels;
+
+    fileData[username] = userData;
+
+    std::ofstream outputFile(filename);
+    outputFile << fileData;
+    outputFile.close();
 }
+
 void User::readPurchasedCarsFromFile(const std::string &filename)
 {
     std::ifstream file(filename);
     if (file.is_open())
     {
-        Json::Value data;
-        file >> data;
+        Json::Value fileData;
+        file >> fileData;
 
-        for (auto &userData : data["users"])
+        Json::Value userData = fileData[username];
+        password = userData["password"].asString();
+        wallet = userData["wallet"].asInt();
+
+        Json::Value purchasedCarModels = userData["cars"];
+        for (auto &carModel : purchasedCarModels)
         {
-            if (userData["username"] == this->username)
-            {
-                for (auto &carModel : userData["purchasedCars"])
-                {
-                    this->purchasedCars.push_back(carModel.asString());
-                }
-                break;
-            }
+            purchasedCars.push_back(carModel.asString());
         }
     }
 }

@@ -1,3 +1,0 @@
-/home/pooya/Desktop/CarAgentStore-master/CMakeFiles/CarAgencyProgram.dir
-/home/pooya/Desktop/CarAgentStore-master/CMakeFiles/edit_cache.dir
-/home/pooya/Desktop/CarAgentStore-master/CMakeFiles/rebuild_cache.dir

@@ -23,9 +23,10 @@ public:
     int getWallet() const;
     void setPassword(const std::string &password);
     void setWallet(int wallet);
-    std::vector<Car> &getOwnedCars();
+    void setOwnedCars(const std::vector<Car>& cars);
+    const std::vector<Car>& getOwnedCars() const;
     void addOwnedCar(Car &car);
-    void showOwnedCars() const;
+    void showPurchasedCars() const;
     void addPurchasedCars(std::string model);
     bool checkPassword(const std::string &password) const;
     void writePurchasedCarsToFile(std::string filename);
@@ -33,4 +34,3 @@ public:
 };
 
 #endif
-

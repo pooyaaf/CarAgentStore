@@ -1,8 +1,8 @@
-
 #include <iostream>
 #include <vector>
 #include <algorithm>
 #include <fstream>
+#include <string>
 #include "json/json.h"
 #include "CarAgency.hpp"
 #include "Car.hpp"
@@ -12,9 +12,12 @@ using namespace std;
 
 int main()
 {
+
     CarAgency agency;
-    agency.addCarsFromFile("../car.json");
-    agency.addUsersFromFile("../user.json");
+    string pathOfCarsJSON = "../car.json";
+    agency.addCarsFromFile(pathOfCarsJSON);
+    string pathOfUsersJSON = "../user.json";
+    agency.addUsersFromFile(pathOfUsersJSON);
 
     int userChoice = 0;
     User *loggedInUser = nullptr;
@@ -80,11 +83,9 @@ int main()
                     Car &car = agency.findCar(model);
                     if (loggedInUser->getWallet() >= car.getPrice())
                     {
-                        if (agency.buyCar(*loggedInUser, model))
+                        if (agency.buyCar(*loggedInUser, model, pathOfUsersJSON,pathOfCarsJSON))
                         {
                             cout << "Car purchased successfully" << endl;
-                            agency.writeUsersToFile("../user_purchases.json");
-                            // readPurchasedCarsFromFile();
                         }
                         else
                         {
@@ -114,7 +115,7 @@ int main()
         }
         case 5:
         {
-            loggedInUser->showOwnedCars();
+            loggedInUser->showPurchasedCars();
             break;
         }
         default:

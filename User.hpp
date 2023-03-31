@@ -26,7 +26,7 @@ public:
     void setOwnedCars(const std::vector<Car>& cars);
     const std::vector<Car>& getOwnedCars() const;
     void addOwnedCar(Car &car);
-    void showPurchasedCars() const;
+    std::string showPurchasedCars() const;
     void addPurchasedCars(std::string model);
     bool checkPassword(const std::string &password) const;
     void writePurchasedCarsToFile(std::string filename);

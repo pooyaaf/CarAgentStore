@@ -12,6 +12,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/pooya/Desktop/CarAgentStore-master/CarAgency.cpp" "CMakeFiles/CarAgencyProgram.dir/CarAgency.cpp.o" "gcc" "CMakeFiles/CarAgencyProgram.dir/CarAgency.cpp.o.d"
   "/home/pooya/Desktop/CarAgentStore-master/User.cpp" "CMakeFiles/CarAgencyProgram.dir/User.cpp.o" "gcc" "CMakeFiles/CarAgencyProgram.dir/User.cpp.o.d"
   "/home/pooya/Desktop/CarAgentStore-master/main.cpp" "CMakeFiles/CarAgencyProgram.dir/main.cpp.o" "gcc" "CMakeFiles/CarAgencyProgram.dir/main.cpp.o.d"
+  "/home/pooya/Desktop/CarAgentStore-master/main_client.cpp" "CMakeFiles/CarAgencyProgram.dir/main_client.cpp.o" "gcc" "CMakeFiles/CarAgencyProgram.dir/main_client.cpp.o.d"
+  "/home/pooya/Desktop/CarAgentStore-master/main_server.cpp" "CMakeFiles/CarAgencyProgram.dir/main_server.cpp.o" "gcc" "CMakeFiles/CarAgencyProgram.dir/main_server.cpp.o.d"
   )
 
 # Targets to which this target links.

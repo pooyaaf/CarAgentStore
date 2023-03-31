@@ -125,12 +125,42 @@ CMakeFiles/CarAgencyProgram.dir/CarAgency.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CarAgencyProgram.dir/CarAgency.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pooya/Desktop/CarAgentStore-master/CarAgency.cpp -o CMakeFiles/CarAgencyProgram.dir/CarAgency.cpp.s
 
+CMakeFiles/CarAgencyProgram.dir/main_server.cpp.o: CMakeFiles/CarAgencyProgram.dir/flags.make
+CMakeFiles/CarAgencyProgram.dir/main_server.cpp.o: ../main_server.cpp
+CMakeFiles/CarAgencyProgram.dir/main_server.cpp.o: CMakeFiles/CarAgencyProgram.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pooya/Desktop/CarAgentStore-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/CarAgencyProgram.dir/main_server.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CarAgencyProgram.dir/main_server.cpp.o -MF CMakeFiles/CarAgencyProgram.dir/main_server.cpp.o.d -o CMakeFiles/CarAgencyProgram.dir/main_server.cpp.o -c /home/pooya/Desktop/CarAgentStore-master/main_server.cpp
+
+CMakeFiles/CarAgencyProgram.dir/main_server.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CarAgencyProgram.dir/main_server.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pooya/Desktop/CarAgentStore-master/main_server.cpp > CMakeFiles/CarAgencyProgram.dir/main_server.cpp.i
+
+CMakeFiles/CarAgencyProgram.dir/main_server.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CarAgencyProgram.dir/main_server.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pooya/Desktop/CarAgentStore-master/main_server.cpp -o CMakeFiles/CarAgencyProgram.dir/main_server.cpp.s
+
+CMakeFiles/CarAgencyProgram.dir/main_client.cpp.o: CMakeFiles/CarAgencyProgram.dir/flags.make
+CMakeFiles/CarAgencyProgram.dir/main_client.cpp.o: ../main_client.cpp
+CMakeFiles/CarAgencyProgram.dir/main_client.cpp.o: CMakeFiles/CarAgencyProgram.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pooya/Desktop/CarAgentStore-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/CarAgencyProgram.dir/main_client.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/CarAgencyProgram.dir/main_client.cpp.o -MF CMakeFiles/CarAgencyProgram.dir/main_client.cpp.o.d -o CMakeFiles/CarAgencyProgram.dir/main_client.cpp.o -c /home/pooya/Desktop/CarAgentStore-master/main_client.cpp
+
+CMakeFiles/CarAgencyProgram.dir/main_client.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CarAgencyProgram.dir/main_client.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pooya/Desktop/CarAgentStore-master/main_client.cpp > CMakeFiles/CarAgencyProgram.dir/main_client.cpp.i
+
+CMakeFiles/CarAgencyProgram.dir/main_client.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CarAgencyProgram.dir/main_client.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pooya/Desktop/CarAgentStore-master/main_client.cpp -o CMakeFiles/CarAgencyProgram.dir/main_client.cpp.s
+
 # Object files for target CarAgencyProgram
 CarAgencyProgram_OBJECTS = \
 "CMakeFiles/CarAgencyProgram.dir/main.cpp.o" \
 "CMakeFiles/CarAgencyProgram.dir/Car.cpp.o" \
 "CMakeFiles/CarAgencyProgram.dir/User.cpp.o" \
-"CMakeFiles/CarAgencyProgram.dir/CarAgency.cpp.o"
+"CMakeFiles/CarAgencyProgram.dir/CarAgency.cpp.o" \
+"CMakeFiles/CarAgencyProgram.dir/main_server.cpp.o" \
+"CMakeFiles/CarAgencyProgram.dir/main_client.cpp.o"
 
 # External object files for target CarAgencyProgram
 CarAgencyProgram_EXTERNAL_OBJECTS =
@@ -139,9 +169,11 @@ CarAgencyProgram_EXTERNAL_OBJECTS =
 ../output/CarAgencyProgram: CMakeFiles/CarAgencyProgram.dir/Car.cpp.o
 ../output/CarAgencyProgram: CMakeFiles/CarAgencyProgram.dir/User.cpp.o
 ../output/CarAgencyProgram: CMakeFiles/CarAgencyProgram.dir/CarAgency.cpp.o
+../output/CarAgencyProgram: CMakeFiles/CarAgencyProgram.dir/main_server.cpp.o
+../output/CarAgencyProgram: CMakeFiles/CarAgencyProgram.dir/main_client.cpp.o
 ../output/CarAgencyProgram: CMakeFiles/CarAgencyProgram.dir/build.make
 ../output/CarAgencyProgram: CMakeFiles/CarAgencyProgram.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pooya/Desktop/CarAgentStore-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable ../output/CarAgencyProgram"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pooya/Desktop/CarAgentStore-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable ../output/CarAgencyProgram"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/CarAgencyProgram.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

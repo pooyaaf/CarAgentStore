@@ -9,6 +9,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/CarAgencyProgram.dir/User.cpp.o.d"
   "CMakeFiles/CarAgencyProgram.dir/main.cpp.o"
   "CMakeFiles/CarAgencyProgram.dir/main.cpp.o.d"
+  "CMakeFiles/CarAgencyProgram.dir/main_client.cpp.o"
+  "CMakeFiles/CarAgencyProgram.dir/main_client.cpp.o.d"
+  "CMakeFiles/CarAgencyProgram.dir/main_server.cpp.o"
+  "CMakeFiles/CarAgencyProgram.dir/main_server.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

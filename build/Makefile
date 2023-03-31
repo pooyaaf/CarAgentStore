@@ -117,24 +117,38 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named CarAgencyProgram
+# Target rules for targets named server
 
 # Build rule for target.
-CarAgencyProgram: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CarAgencyProgram
-.PHONY : CarAgencyProgram
+server: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 server
+.PHONY : server
 
 # fast build rule for target.
-CarAgencyProgram/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CarAgencyProgram.dir/build.make CMakeFiles/CarAgencyProgram.dir/build
-.PHONY : CarAgencyProgram/fast
+server/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
+.PHONY : server/fast
+
+#=============================================================================
+# Target rules for targets named client
+
+# Build rule for target.
+client: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 client
+.PHONY : client
+
+# fast build rule for target.
+client/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/build
+.PHONY : client/fast
 
 Car.o: Car.cpp.o
 .PHONY : Car.o
 
 # target to build an object file
 Car.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CarAgencyProgram.dir/build.make CMakeFiles/CarAgencyProgram.dir/Car.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/Car.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Car.cpp.o
 .PHONY : Car.cpp.o
 
 Car.i: Car.cpp.i
@@ -142,7 +156,8 @@ Car.i: Car.cpp.i
 
 # target to preprocess a source file
 Car.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CarAgencyProgram.dir/build.make CMakeFiles/CarAgencyProgram.dir/Car.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/Car.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Car.cpp.i
 .PHONY : Car.cpp.i
 
 Car.s: Car.cpp.s
@@ -150,7 +165,8 @@ Car.s: Car.cpp.s
 
 # target to generate assembly for a file
 Car.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CarAgencyProgram.dir/build.make CMakeFiles/CarAgencyProgram.dir/Car.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/Car.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Car.cpp.s
 .PHONY : Car.cpp.s
 
 CarAgency.o: CarAgency.cpp.o
@@ -158,7 +174,8 @@ CarAgency.o: CarAgency.cpp.o
 
 # target to build an object file
 CarAgency.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CarAgencyProgram.dir/build.make CMakeFiles/CarAgencyProgram.dir/CarAgency.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/CarAgency.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/CarAgency.cpp.o
 .PHONY : CarAgency.cpp.o
 
 CarAgency.i: CarAgency.cpp.i
@@ -166,7 +183,8 @@ CarAgency.i: CarAgency.cpp.i
 
 # target to preprocess a source file
 CarAgency.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CarAgencyProgram.dir/build.make CMakeFiles/CarAgencyProgram.dir/CarAgency.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/CarAgency.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/CarAgency.cpp.i
 .PHONY : CarAgency.cpp.i
 
 CarAgency.s: CarAgency.cpp.s
@@ -174,7 +192,8 @@ CarAgency.s: CarAgency.cpp.s
 
 # target to generate assembly for a file
 CarAgency.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CarAgencyProgram.dir/build.make CMakeFiles/CarAgencyProgram.dir/CarAgency.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/CarAgency.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/CarAgency.cpp.s
 .PHONY : CarAgency.cpp.s
 
 User.o: User.cpp.o
@@ -182,7 +201,8 @@ User.o: User.cpp.o
 
 # target to build an object file
 User.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CarAgencyProgram.dir/build.make CMakeFiles/CarAgencyProgram.dir/User.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/User.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/User.cpp.o
 .PHONY : User.cpp.o
 
 User.i: User.cpp.i
@@ -190,7 +210,8 @@ User.i: User.cpp.i
 
 # target to preprocess a source file
 User.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CarAgencyProgram.dir/build.make CMakeFiles/CarAgencyProgram.dir/User.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/User.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/User.cpp.i
 .PHONY : User.cpp.i
 
 User.s: User.cpp.s
@@ -198,32 +219,57 @@ User.s: User.cpp.s
 
 # target to generate assembly for a file
 User.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CarAgencyProgram.dir/build.make CMakeFiles/CarAgencyProgram.dir/User.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/User.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/User.cpp.s
 .PHONY : User.cpp.s
 
-main.o: main.cpp.o
-.PHONY : main.o
+main_client.o: main_client.cpp.o
+.PHONY : main_client.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CarAgencyProgram.dir/build.make CMakeFiles/CarAgencyProgram.dir/main.cpp.o
-.PHONY : main.cpp.o
+main_client.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/main_client.cpp.o
+.PHONY : main_client.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+main_client.i: main_client.cpp.i
+.PHONY : main_client.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CarAgencyProgram.dir/build.make CMakeFiles/CarAgencyProgram.dir/main.cpp.i
-.PHONY : main.cpp.i
+main_client.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/main_client.cpp.i
+.PHONY : main_client.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+main_client.s: main_client.cpp.s
+.PHONY : main_client.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CarAgencyProgram.dir/build.make CMakeFiles/CarAgencyProgram.dir/main.cpp.s
-.PHONY : main.cpp.s
+main_client.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/main_client.cpp.s
+.PHONY : main_client.cpp.s
+
+main_server.o: main_server.cpp.o
+.PHONY : main_server.o
+
+# target to build an object file
+main_server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/main_server.cpp.o
+.PHONY : main_server.cpp.o
+
+main_server.i: main_server.cpp.i
+.PHONY : main_server.i
+
+# target to preprocess a source file
+main_server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/main_server.cpp.i
+.PHONY : main_server.cpp.i
+
+main_server.s: main_server.cpp.s
+.PHONY : main_server.s
+
+# target to generate assembly for a file
+main_server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/main_server.cpp.s
+.PHONY : main_server.cpp.s
 
 # Help Target
 help:
@@ -233,7 +279,8 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... CarAgencyProgram"
+	@echo "... client"
+	@echo "... server"
 	@echo "... Car.o"
 	@echo "... Car.i"
 	@echo "... Car.s"
@@ -243,9 +290,12 @@ help:
 	@echo "... User.o"
 	@echo "... User.i"
 	@echo "... User.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... main_client.o"
+	@echo "... main_client.i"
+	@echo "... main_client.s"
+	@echo "... main_server.o"
+	@echo "... main_server.i"
+	@echo "... main_server.s"
 .PHONY : help
 
 

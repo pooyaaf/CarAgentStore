@@ -3,11 +3,12 @@
 	{
 		"cars" : 
 		[
-			"BMW"
+			"Toyota",
+			"Kia"
 		],
 		"password" : "pass1",
 		"username" : "user1",
-		"wallet" : 169000
+		"wallet" : 92000
 	},
 	"user10" : 
 	{

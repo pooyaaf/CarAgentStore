@@ -6,7 +6,7 @@
 		"year" : 2019
 	},
 	{
-		"count" : 3,
+		"count" : 2,
 		"model" : "BMW",
 		"price" : 40000,
 		"year" : 2020
@@ -18,7 +18,7 @@
 		"year" : 2021
 	},
 	{
-		"count" : 12,
+		"count" : 11,
 		"model" : "Toyota",
 		"price" : 25000,
 		"year" : 2020
@@ -48,7 +48,7 @@
 		"year" : 2022
 	},
 	{
-		"count" : 10,
+		"count" : 7,
 		"model" : "Kia",
 		"price" : 26000,
 		"year" : 2020

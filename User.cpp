@@ -50,15 +50,18 @@ void User::addOwnedCar(Car &car)
     ownedCars.push_back(car);
 }
 
-void User::showPurchasedCars() const
+std::string User::showPurchasedCars() const
 {
-    std::cout << "Purchased cars for " << this->username << ":\n";
+    std::ostringstream oss;
+    oss << "Purchased cars for " << this->username << ":\n";
     for (const auto &carModel : purchasedCars)
     {
-        std::cout << "- " << carModel << "\n";
+        oss << "- " << carModel << "\n";
     }
-    std::cout << "\n";
+    oss << "\n";
+    return oss.str();
 }
+
 
 void User::addPurchasedCars(std::string model)
 {

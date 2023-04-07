@@ -22,17 +22,20 @@ void CarAgency::addUser(const User &user)
     users.push_back(user);
 }
 
-void CarAgency::showCars() const
+std::string CarAgency::showCars() const
 {
-    std::cout << "Available cars: " << std::endl;
+    std::stringstream ss;
+    ss << "Available cars: " << std::endl;
     for (const auto &car : cars)
     {
         if (car.getCount() > 0)
         {
-            std::cout << car.getModel() << "\t" << car.getCount() << "\t" << car.getPrice() << std::endl;
+            ss << car.getModel() << "\t" << car.getCount() << "\t" << car.getPrice() << std::endl;
         }
     }
+    return ss.str();
 }
+
 
 User& CarAgency::findUser(const std::string &username)
 {

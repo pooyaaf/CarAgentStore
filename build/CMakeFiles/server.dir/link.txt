@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/server.dir/main_server.cpp.o CMakeFiles/server.dir/Car.cpp.o CMakeFiles/server.dir/User.cpp.o CMakeFiles/server.dir/CarAgency.cpp.o -o ../output/server  -ljsoncpp 

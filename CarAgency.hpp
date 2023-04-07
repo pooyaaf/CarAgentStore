@@ -20,7 +20,7 @@ class CarAgency {
     CarAgency(); 
     void addCar(const Car &car); 
     void addUser(const User &user); 
-    void showCars() const; 
+    std::string showCars() const;
     User& findUser(const std::string &username); 
     bool checkUserExists(const std::string &username) const; 
     bool checkCarExists(const std::string &model) const; 

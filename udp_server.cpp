@@ -128,7 +128,8 @@ int main(int argc, char *argv[])
                 if (user.checkPassword(password))
                 {
                     loggedInUser = &user;
-                    cout<<"User:" <<username<< " Logged in with password:\n"<<password;
+                    cout << "User:" << username << " Logged in with password:\n"
+                         << password;
                     send(newSd, "Login successful\n", strlen("Login successful\n"), 0);
                     memset(&msg, 0, sizeof(msg));
                     break;
@@ -221,10 +222,7 @@ int main(int argc, char *argv[])
             send(newSd, purchasedCarsStr.c_str(), purchasedCarsStr.length(), 0);
             break;
         }
-
         }
-
-      
     }
 
     return 0;

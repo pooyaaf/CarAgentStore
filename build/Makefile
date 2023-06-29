@@ -117,38 +117,66 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named server
+# Target rules for targets named udp_server
 
 # Build rule for target.
-server: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 server
-.PHONY : server
+udp_server: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 udp_server
+.PHONY : udp_server
 
 # fast build rule for target.
-server/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
-.PHONY : server/fast
+udp_server/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/build
+.PHONY : udp_server/fast
 
 #=============================================================================
-# Target rules for targets named client
+# Target rules for targets named tcp_server
 
 # Build rule for target.
-client: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 client
-.PHONY : client
+tcp_server: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tcp_server
+.PHONY : tcp_server
 
 # fast build rule for target.
-client/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/build
-.PHONY : client/fast
+tcp_server/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tcp_server.dir/build.make CMakeFiles/tcp_server.dir/build
+.PHONY : tcp_server/fast
+
+#=============================================================================
+# Target rules for targets named udp_client
+
+# Build rule for target.
+udp_client: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 udp_client
+.PHONY : udp_client
+
+# fast build rule for target.
+udp_client/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/build
+.PHONY : udp_client/fast
+
+#=============================================================================
+# Target rules for targets named tcp_client
+
+# Build rule for target.
+tcp_client: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tcp_client
+.PHONY : tcp_client
+
+# fast build rule for target.
+tcp_client/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tcp_client.dir/build.make CMakeFiles/tcp_client.dir/build
+.PHONY : tcp_client/fast
 
 Car.o: Car.cpp.o
 .PHONY : Car.o
 
 # target to build an object file
 Car.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/Car.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Car.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/Car.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tcp_server.dir/build.make CMakeFiles/tcp_server.dir/Car.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/Car.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tcp_client.dir/build.make CMakeFiles/tcp_client.dir/Car.cpp.o
 .PHONY : Car.cpp.o
 
 Car.i: Car.cpp.i
@@ -156,8 +184,10 @@ Car.i: Car.cpp.i
 
 # target to preprocess a source file
 Car.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/Car.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Car.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/Car.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tcp_server.dir/build.make CMakeFiles/tcp_server.dir/Car.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/Car.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tcp_client.dir/build.make CMakeFiles/tcp_client.dir/Car.cpp.i
 .PHONY : Car.cpp.i
 
 Car.s: Car.cpp.s
@@ -165,8 +195,10 @@ Car.s: Car.cpp.s
 
 # target to generate assembly for a file
 Car.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/Car.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/Car.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/Car.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tcp_server.dir/build.make CMakeFiles/tcp_server.dir/Car.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/Car.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tcp_client.dir/build.make CMakeFiles/tcp_client.dir/Car.cpp.s
 .PHONY : Car.cpp.s
 
 CarAgency.o: CarAgency.cpp.o
@@ -174,8 +206,10 @@ CarAgency.o: CarAgency.cpp.o
 
 # target to build an object file
 CarAgency.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/CarAgency.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/CarAgency.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/CarAgency.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tcp_server.dir/build.make CMakeFiles/tcp_server.dir/CarAgency.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/CarAgency.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tcp_client.dir/build.make CMakeFiles/tcp_client.dir/CarAgency.cpp.o
 .PHONY : CarAgency.cpp.o
 
 CarAgency.i: CarAgency.cpp.i
@@ -183,8 +217,10 @@ CarAgency.i: CarAgency.cpp.i
 
 # target to preprocess a source file
 CarAgency.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/CarAgency.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/CarAgency.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/CarAgency.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tcp_server.dir/build.make CMakeFiles/tcp_server.dir/CarAgency.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/CarAgency.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tcp_client.dir/build.make CMakeFiles/tcp_client.dir/CarAgency.cpp.i
 .PHONY : CarAgency.cpp.i
 
 CarAgency.s: CarAgency.cpp.s
@@ -192,8 +228,10 @@ CarAgency.s: CarAgency.cpp.s
 
 # target to generate assembly for a file
 CarAgency.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/CarAgency.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/CarAgency.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/CarAgency.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tcp_server.dir/build.make CMakeFiles/tcp_server.dir/CarAgency.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/CarAgency.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tcp_client.dir/build.make CMakeFiles/tcp_client.dir/CarAgency.cpp.s
 .PHONY : CarAgency.cpp.s
 
 User.o: User.cpp.o
@@ -201,8 +239,10 @@ User.o: User.cpp.o
 
 # target to build an object file
 User.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/User.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/User.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/User.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tcp_server.dir/build.make CMakeFiles/tcp_server.dir/User.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/User.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tcp_client.dir/build.make CMakeFiles/tcp_client.dir/User.cpp.o
 .PHONY : User.cpp.o
 
 User.i: User.cpp.i
@@ -210,8 +250,10 @@ User.i: User.cpp.i
 
 # target to preprocess a source file
 User.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/User.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/User.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/User.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tcp_server.dir/build.make CMakeFiles/tcp_server.dir/User.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/User.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tcp_client.dir/build.make CMakeFiles/tcp_client.dir/User.cpp.i
 .PHONY : User.cpp.i
 
 User.s: User.cpp.s
@@ -219,57 +261,107 @@ User.s: User.cpp.s
 
 # target to generate assembly for a file
 User.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/User.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/User.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/User.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tcp_server.dir/build.make CMakeFiles/tcp_server.dir/User.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/User.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tcp_client.dir/build.make CMakeFiles/tcp_client.dir/User.cpp.s
 .PHONY : User.cpp.s
 
-main_client.o: main_client.cpp.o
-.PHONY : main_client.o
+tcp_client.o: tcp_client.cpp.o
+.PHONY : tcp_client.o
 
 # target to build an object file
-main_client.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/main_client.cpp.o
-.PHONY : main_client.cpp.o
+tcp_client.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tcp_client.dir/build.make CMakeFiles/tcp_client.dir/tcp_client.cpp.o
+.PHONY : tcp_client.cpp.o
 
-main_client.i: main_client.cpp.i
-.PHONY : main_client.i
+tcp_client.i: tcp_client.cpp.i
+.PHONY : tcp_client.i
 
 # target to preprocess a source file
-main_client.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/main_client.cpp.i
-.PHONY : main_client.cpp.i
+tcp_client.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tcp_client.dir/build.make CMakeFiles/tcp_client.dir/tcp_client.cpp.i
+.PHONY : tcp_client.cpp.i
 
-main_client.s: main_client.cpp.s
-.PHONY : main_client.s
+tcp_client.s: tcp_client.cpp.s
+.PHONY : tcp_client.s
 
 # target to generate assembly for a file
-main_client.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/main_client.cpp.s
-.PHONY : main_client.cpp.s
+tcp_client.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tcp_client.dir/build.make CMakeFiles/tcp_client.dir/tcp_client.cpp.s
+.PHONY : tcp_client.cpp.s
 
-main_server.o: main_server.cpp.o
-.PHONY : main_server.o
+tcp_server.o: tcp_server.cpp.o
+.PHONY : tcp_server.o
 
 # target to build an object file
-main_server.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/main_server.cpp.o
-.PHONY : main_server.cpp.o
+tcp_server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tcp_server.dir/build.make CMakeFiles/tcp_server.dir/tcp_server.cpp.o
+.PHONY : tcp_server.cpp.o
 
-main_server.i: main_server.cpp.i
-.PHONY : main_server.i
+tcp_server.i: tcp_server.cpp.i
+.PHONY : tcp_server.i
 
 # target to preprocess a source file
-main_server.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/main_server.cpp.i
-.PHONY : main_server.cpp.i
+tcp_server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tcp_server.dir/build.make CMakeFiles/tcp_server.dir/tcp_server.cpp.i
+.PHONY : tcp_server.cpp.i
 
-main_server.s: main_server.cpp.s
-.PHONY : main_server.s
+tcp_server.s: tcp_server.cpp.s
+.PHONY : tcp_server.s
 
 # target to generate assembly for a file
-main_server.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/main_server.cpp.s
-.PHONY : main_server.cpp.s
+tcp_server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tcp_server.dir/build.make CMakeFiles/tcp_server.dir/tcp_server.cpp.s
+.PHONY : tcp_server.cpp.s
+
+udp_client.o: udp_client.cpp.o
+.PHONY : udp_client.o
+
+# target to build an object file
+udp_client.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/udp_client.cpp.o
+.PHONY : udp_client.cpp.o
+
+udp_client.i: udp_client.cpp.i
+.PHONY : udp_client.i
+
+# target to preprocess a source file
+udp_client.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/udp_client.cpp.i
+.PHONY : udp_client.cpp.i
+
+udp_client.s: udp_client.cpp.s
+.PHONY : udp_client.s
+
+# target to generate assembly for a file
+udp_client.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_client.dir/build.make CMakeFiles/udp_client.dir/udp_client.cpp.s
+.PHONY : udp_client.cpp.s
+
+udp_server.o: udp_server.cpp.o
+.PHONY : udp_server.o
+
+# target to build an object file
+udp_server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/udp_server.cpp.o
+.PHONY : udp_server.cpp.o
+
+udp_server.i: udp_server.cpp.i
+.PHONY : udp_server.i
+
+# target to preprocess a source file
+udp_server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/udp_server.cpp.i
+.PHONY : udp_server.cpp.i
+
+udp_server.s: udp_server.cpp.s
+.PHONY : udp_server.s
+
+# target to generate assembly for a file
+udp_server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/udp_server.dir/build.make CMakeFiles/udp_server.dir/udp_server.cpp.s
+.PHONY : udp_server.cpp.s
 
 # Help Target
 help:
@@ -279,8 +371,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... client"
-	@echo "... server"
+	@echo "... tcp_client"
+	@echo "... tcp_server"
+	@echo "... udp_client"
+	@echo "... udp_server"
 	@echo "... Car.o"
 	@echo "... Car.i"
 	@echo "... Car.s"
@@ -290,12 +384,18 @@ help:
 	@echo "... User.o"
 	@echo "... User.i"
 	@echo "... User.s"
-	@echo "... main_client.o"
-	@echo "... main_client.i"
-	@echo "... main_client.s"
-	@echo "... main_server.o"
-	@echo "... main_server.i"
-	@echo "... main_server.s"
+	@echo "... tcp_client.o"
+	@echo "... tcp_client.i"
+	@echo "... tcp_client.s"
+	@echo "... tcp_server.o"
+	@echo "... tcp_server.i"
+	@echo "... tcp_server.s"
+	@echo "... udp_client.o"
+	@echo "... udp_client.i"
+	@echo "... udp_client.s"
+	@echo "... udp_server.o"
+	@echo "... udp_server.i"
+	@echo "... udp_server.s"
 .PHONY : help
 
 

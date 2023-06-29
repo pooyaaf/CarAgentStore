@@ -1,15 +1,310 @@
-{
-    "user1":
-    {
-        "username": "user1",
-        "password": "pass1",
-        "cars":[
-            1,
-            2
-        ]    
-    },
-    "user2":
-    {
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include <fstream>
+#include <string>
+#include <netdb.h>
+#include <sys/uio.h>
+#include <sys/time.h>
+#include <sys/wait.h>
+#include "json/json.h"
+#include "CarAgency.hpp"
+#include "Car.hpp"
+#include "User.hpp"
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <unistd.h>
+#include <arpa/inet.h>
 
+#define PORT 8080
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+    // Create a CarAgency instance
+    CarAgency agency;
+    string pathOfCarsJSON = "../car.json";
+    agency.addCarsFromFile(pathOfCarsJSON);
+    string pathOfUsersJSON = "../user.json";
+    agency.addUsersFromFile(pathOfUsersJSON);
+    // for the server, we only need to specify a port number
+    if (argc != 2)
+    {
+        cerr << "Usage: port" << endl;
+        exit(0);
     }
+    // grab the port number
+    int port = atoi(argv[1]);
+    // buffer to send and receive messages with
+    char msg[1500];
+
+    // setup a socket and connection tools
+    sockaddr_in servAddr, clientAddr;
+    socklen_t clientAddrSize = sizeof(clientAddr);
+    bzero((char *)&servAddr, sizeof(servAddr));
+    servAddr.sin_family = AF_INET;
+    servAddr.sin_addr.s_addr = htonl(INADDR_ANY);
+    servAddr.sin_port = htons(port);
+
+    // open datagram socket
+    int serverSd = socket(AF_INET, SOCK_DGRAM, 0);
+    if (serverSd < 0)
+    {
+        cerr << "Error establishing the server socket" << endl;
+        exit(0);
+    }
+    // bind the socket to its local address
+    int bindStatus = bind(serverSd, (struct sockaddr *)&servAddr,
+                          sizeof(servAddr));
+    if (bindStatus < 0)
+    {
+        cerr << "Error binding socket to local address" << endl;
+        exit(0);
+    }
+    cout << "Waiting for a client to connect..." << endl;
+
+    // lets keep track of the session time
+    struct timeval start1, end1;
+    gettimeofday(&start1, NULL);
+    // also keep track of the amount of data sent as well
+    int bytesRead, bytesWritten = 0;
+
+    // receive a message from the client
+    cout << "Awaiting client response..." << endl;
+
+    int userChoice = 0;
+    int valread;
+    User *loggedInUser = nullptr;
+    memset(&msg, 0, sizeof(msg));
+    while (userChoice != 2)
+    {
+        memset(&msg, 0, sizeof(msg)); // clear the buffer
+        // receive a message from any client
+        int bytesRead = recvfrom(serverSd, (char *)&msg, sizeof(msg), 0, (struct sockaddr *)&clientAddr, &clientAddrSize);
+        cout << "Client: " << msg << endl;
+        userChoice = stoi(msg);
+        // Send the user menu to the client
+        string menu = "";
+        menu += "Car Agency Program\n";
+        menu += "1. Login\n";
+        menu += "2. Quit\n";
+        if (loggedInUser)
+        {
+            menu += "3. Purchase a Car\n";
+            menu += "4. Show Wallet\n";
+            menu += "5. Show Purchased Cars\n";
+        }
+        sendto(serverSd, menu.c_str(), menu.length(), 0, (struct sockaddr *)&clientAddr, sizeof(clientAddr));
+        switch (userChoice)
+        {
+
+        case 1:
+        {
+            // Receive the login credentials from the client
+            char username[1024] = {0};
+            char password[1024] = {0};
+            sendto(serverSd, "Enter username: ", strlen("Enter username: "), 0, (struct sockaddr *)&clientAddr, sizeof(clientAddr));
+
+            socklen_t clientAddrLen = sizeof(clientAddr);
+            valread = recvfrom(serverSd, username, 1024, 0, (struct sockaddr *)&clientAddr, &clientAddrLen);
+
+            sendto(serverSd, "Enter password: ", strlen("Enter password: "), 0, (struct sockaddr *)&clientAddr, sizeof(clientAddr));
+
+            clientAddrLen = sizeof(clientAddr);
+            valread = recvfrom(serverSd, password, 1024, 0, (struct sockaddr *)&clientAddr, &clientAddrLen);
+
+            if (agency.checkUserExists(username))
+            {
+                User &user = agency.findUser(username);
+                if (user.checkPassword(password))
+                {
+                    loggedInUser = &user;
+                    cout << "User:" << username << " Logged in with password:\n"
+                         << password;
+                    sendto(serverSd, "Login successful\n", strlen("Login successful\n"), 0, (struct sockaddr *)&clientAddr, sizeof(clientAddr));
+                    memset(&msg, 0, sizeof(msg));
+                    break;
+                }
+                else
+                {
+                    sendto(serverSd, "Incorrect password\n", strlen("Incorrect password\n"), 0, (struct sockaddr *)&clientAddr, sizeof(clientAddr));
+                    memset(&msg, 0, sizeof(msg));
+                    break;
+                }
+            }
+            else
+            {
+                sendto(serverSd, "User does not exist\n", strlen("User does not exist\n"), 0, (struct sockaddr *)&clientAddr, sizeof(clientAddr));
+                memset(&msg, 0, sizeof(msg));
+                break;
+            }
+        }
+        case 2:
+        {
+            sendto(serverSd, "User does not exist\n", strlen("User does not exist\n"), 0, (struct sockaddr *)&clientAddr, sizeof(clientAddr));
+            memset(&msg, 0, sizeof(msg));
+            // we need to close the socket descriptors after we're all done
+            gettimeofday(&end1, NULL);
+            close(serverSd);
+
+            cout << "********Session********" << endl;
+            cout << "Bytes written: " << bytesWritten << " Bytes read: " << bytesRead << endl;
+            cout << "Elapsed time: " << (end1.tv_sec - start1.tv_sec)
+                 << " secs" << endl;
+            cout << "Connection closed..." << endl;
+            break;
+        }
+        case 3:
+        {
+            if (loggedInUser)
+            {
+                sendto(serverSd, "Available cars: (Enter to list view | cntrl + c to exit)", strlen("Available cars: (Enter to list view | cntrl + c to exit)"), 0, (struct sockaddr *)&clientAddr, sizeof(clientAddr));
+                std::string availableCars = agency.showCars();
+                sendto(serverSd, availableCars.c_str(), availableCars.size(), 0, (struct sockaddr *)&clientAddr, sizeof(clientAddr));
+                sendto(serverSd, "Enter the model of the car you want to buy: ", strlen("Enter the model of the car you want to buy: "), 0, (struct sockaddr *)&clientAddr, sizeof(clientAddr));
+                // Receive the user's choice from the client for model
+                char model[1024] = {0};
+                // memset(&msg, 0, sizeof(msg));
+                // bytesRead += recv(serverSd, (char *)&model, sizeof(model), 0);
+                valread = recvfrom(serverSd, model, 1024, 0, (struct sockaddr *)&clientAddr, &clientAddrSize);
+                cout << model;
+                // cout<<"Selected car model :"<<model;
+                if (agency.checkCarExists(model))
+                {
+                    Car &car = agency.findCar(model);
+                    if (loggedInUser->getWallet() >= car.getPrice())
+                    {
+                        if (agency.buyCar(*loggedInUser, model, pathOfUsersJSON, pathOfCarsJSON))
+                        {
+                            sendto(serverSd, "Car purchased successfully", strlen("Car purchased successfully"), 0, (struct sockaddr *)&clientAddr, sizeof(clientAddr));
+                        }
+                        else
+                        {
+                            sendto(serverSd, "Error purchasing car", strlen("Error purchasing car"), 0, (struct sockaddr *)&clientAddr, sizeof(clientAddr));
+                        }
+                    }
+                    else
+                    {
+                        sendto(serverSd, "You do not have enough money", strlen("You do not have enough money"), 0, (struct sockaddr *)&clientAddr, sizeof(clientAddr));
+                    }
+                }
+                else
+                {
+                    sendto(serverSd, "Car does not exist", strlen("Car does not exist"), 0, (struct sockaddr *)&clientAddr, sizeof(clientAddr));
+                }
+            }
+            else
+            {
+                sendto(serverSd, "You must log in first", strlen("You must log in first"), 0, (struct sockaddr *)&clientAddr, sizeof(clientAddr));
+            }
+            break;
+        }
+
+        case 4:
+        {
+            string walletMsg = "Your wallet balance is: " + std::to_string(loggedInUser->getWallet());
+            sendto(serverSd, walletMsg.c_str(), walletMsg.length(), 0, (struct sockaddr *)&clientAddr, sizeof(clientAddr));
+            break;
+        }
+        case 5:
+        {
+            std::string purchasedCarsStr = loggedInUser->showPurchasedCars();
+            sendto(serverSd, purchasedCarsStr.c_str(), purchasedCarsStr.length(), 0, (struct sockaddr *)&clientAddr, sizeof(clientAddr));
+
+            break;
+        }
+        }
+    }
+
+    return 0;
+}
+
+
+------------ 
+
+#include <iostream>
+#include <string>
+#include <stdio.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <netdb.h>
+#include <sys/uio.h>
+#include <sys/time.h>
+#include <sys/wait.h>
+#include <fcntl.h>
+#include <fstream>
+using namespace std;
+// Client side
+int main(int argc, char *argv[])
+{
+
+    // we need 2 things: ip address and port number, in that order
+    if (argc != 3)
+    {
+        cerr << "Usage: ip_address port" << endl;
+        exit(0);
+    } // grab the IP address and port number
+    char *serverIp = argv[1];
+    int port = atoi(argv[2]);
+    // create a message buffer
+    char msg[1500];
+    // setup a socket and connection tools
+    struct hostent *host = gethostbyname(serverIp);
+    sockaddr_in sendSockAddr;
+    bzero((char *)&sendSockAddr, sizeof(sendSockAddr));
+    sendSockAddr.sin_family = AF_INET;
+    sendSockAddr.sin_addr.s_addr =
+        inet_addr(inet_ntoa(*(struct in_addr *)*host->h_addr_list));
+    sendSockAddr.sin_port = htons(port);
+    int clientSd = socket(AF_INET, SOCK_STREAM, 0);
+    // try to connect...
+    int status = connect(clientSd,
+                         (sockaddr *)&sendSockAddr, sizeof(sendSockAddr));
+    if (status < 0)
+    {
+        cout << "Error connecting to socket!" << endl;
+        return -1;
+    }
+    cout << "Connected to the server!" << endl;
+    int bytesRead, bytesWritten = 0;
+    struct timeval start1, end1;
+    gettimeofday(&start1, NULL);
+    while (1)
+    {
+        cout << ">";
+        string data;
+        getline(cin, data);
+        memset(&msg, 0, sizeof(msg)); // clear the buffer
+        strcpy(msg, data.c_str());
+        if (data == "exit")
+        {
+            send(clientSd, (char *)&msg, strlen(msg), 0);
+            break;
+        }
+        bytesWritten += send(clientSd, (char *)&msg, strlen(msg), 0);
+        cout << "Awaiting server response..." << endl;
+        memset(&msg, 0, sizeof(msg)); // clear the buffer
+        bytesRead += recv(clientSd, (char *)&msg, sizeof(msg), 0);
+        if (!strcmp(msg, "exit"))
+        {
+            cout << "Server has quit the session" << endl;
+            break;
+        }
+        cout << "Server: " << msg << endl;
+    }
+    gettimeofday(&end1, NULL);
+    close(clientSd);
+    cout << "********Session********" << endl;
+    cout << "Bytes written: " << bytesWritten << " Bytes read: " << bytesRead << endl;
+    cout << "Elapsed time: " << (end1.tv_sec - start1.tv_sec)
+         << " secs" << endl;
+    cout << "Connection closed" << endl;
+    return 0;
 }

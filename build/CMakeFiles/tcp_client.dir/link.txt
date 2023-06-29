@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/tcp_client.dir/tcp_client.cpp.o CMakeFiles/tcp_client.dir/Car.cpp.o CMakeFiles/tcp_client.dir/User.cpp.o CMakeFiles/tcp_client.dir/CarAgency.cpp.o -o ../output/tcp_client  -ljsoncpp 

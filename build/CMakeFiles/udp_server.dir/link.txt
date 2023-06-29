@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/udp_server.dir/udp_server.cpp.o CMakeFiles/udp_server.dir/Car.cpp.o CMakeFiles/udp_server.dir/User.cpp.o CMakeFiles/udp_server.dir/CarAgency.cpp.o -o ../output/udp_server  -ljsoncpp 

@@ -97,7 +97,7 @@ int main(int argc, char *argv[])
         memset(&msg, 0, sizeof(msg)); // clear the buffer
         bytesRead += recv(newSd, (char *)&msg, sizeof(msg), 0);
         cout << "Client: " << msg << endl;
-        int userChoice = stoi(msg);
+        userChoice = stoi(msg);
         // Send the user menu to the client
         string menu = "";
         menu += "Car Agency Program\n";
@@ -128,7 +128,8 @@ int main(int argc, char *argv[])
                 if (user.checkPassword(password))
                 {
                     loggedInUser = &user;
-                    cout<<"User:" <<username<< " Logged in with password:\n"<<password;
+                    cout << "User:" << username << " Logged in with password:\n"
+                         << password;
                     send(newSd, "Login successful\n", strlen("Login successful\n"), 0);
                     memset(&msg, 0, sizeof(msg));
                     break;
@@ -221,10 +222,7 @@ int main(int argc, char *argv[])
             send(newSd, purchasedCarsStr.c_str(), purchasedCarsStr.length(), 0);
             break;
         }
-
         }
-
-      
     }
 
     return 0;

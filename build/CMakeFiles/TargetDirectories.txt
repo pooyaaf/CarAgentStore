@@ -1,4 +1,6 @@
-/home/pooya/Desktop/CarAgentStore-master/build/CMakeFiles/server.dir
-/home/pooya/Desktop/CarAgentStore-master/build/CMakeFiles/client.dir
+/home/pooya/Desktop/CarAgentStore-master/build/CMakeFiles/udp_server.dir
+/home/pooya/Desktop/CarAgentStore-master/build/CMakeFiles/tcp_server.dir
+/home/pooya/Desktop/CarAgentStore-master/build/CMakeFiles/udp_client.dir
+/home/pooya/Desktop/CarAgentStore-master/build/CMakeFiles/tcp_client.dir
 /home/pooya/Desktop/CarAgentStore-master/build/CMakeFiles/edit_cache.dir
 /home/pooya/Desktop/CarAgentStore-master/build/CMakeFiles/rebuild_cache.dir

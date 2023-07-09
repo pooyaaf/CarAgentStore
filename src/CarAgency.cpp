@@ -4,9 +4,9 @@
 #include <algorithm>
 #include <vector>
 #include "json/json.h"
-#include "CarAgency.hpp"
-#include "Car.hpp"
-#include "User.hpp"
+#include "../include/CarAgency.hpp"
+#include "../include/Car.hpp"
+#include "../include/User.hpp"
 
 using namespace std;
 
@@ -36,11 +36,11 @@ std::string CarAgency::showCars() const
     return ss.str();
 }
 
-
-User& CarAgency::findUser(const std::string &username)
+User &CarAgency::findUser(const std::string &username)
 {
     auto user = std::find_if(users.begin(), users.end(),
-        [&username](const User& user) { return user.getUsername() == username; });
+                             [&username](const User &user)
+                             { return user.getUsername() == username; });
     if (user == users.end())
     {
         throw std::runtime_error("Error: User not found");
@@ -51,21 +51,24 @@ User& CarAgency::findUser(const std::string &username)
 bool CarAgency::checkUserExists(const std::string &username) const
 {
     auto user = std::find_if(users.begin(), users.end(),
-        [&username](const User& user) { return user.getUsername() == username; });
+                             [&username](const User &user)
+                             { return user.getUsername() == username; });
     return user != users.end();
 }
 
 bool CarAgency::checkCarExists(const std::string &model) const
 {
     auto car = std::find_if(cars.begin(), cars.end(),
-        [&model](const Car& car) { return car.getModel() == model; });
+                            [&model](const Car &car)
+                            { return car.getModel() == model; });
     return car != cars.end();
 }
 
-Car& CarAgency::findCar(const std::string &model)
+Car &CarAgency::findCar(const std::string &model)
 {
     auto car = std::find_if(cars.begin(), cars.end(),
-        [&model](const Car& car) { return car.getModel() == model; });
+                            [&model](const Car &car)
+                            { return car.getModel() == model; });
     if (car == cars.end())
     {
         throw std::runtime_error("Error: Car not found");
@@ -73,7 +76,7 @@ Car& CarAgency::findCar(const std::string &model)
     return *car;
 }
 
-bool CarAgency::buyCar(User &user, const std::string &model,const std::string &filename1,const std::string &filename2)
+bool CarAgency::buyCar(User &user, const std::string &model, const std::string &filename1, const std::string &filename2)
 {
     if (!checkCarExists(model))
     {
@@ -95,12 +98,12 @@ bool CarAgency::buyCar(User &user, const std::string &model,const std::string &f
     user.writePurchasedCarsToFile(filename1);
     car.updateJSONFile(filename2);
     std::vector<Json::String> ownedCarModels;
-    std::transform(ownedCars.begin(), ownedCars.end(), std::back_inserter(ownedCarModels), [](const Car& car){ return Json::String(car.getModel()); });
+    std::transform(ownedCars.begin(), ownedCars.end(), std::back_inserter(ownedCarModels), [](const Car &car)
+                   { return Json::String(car.getModel()); });
     car = Car(car.getModel(), car.getYear(), car.getPrice(), car.getCount(), ownedCarModels);
 
     return true;
 }
-
 
 void CarAgency::addCarsFromFile(const std::string &fileName)
 {
@@ -120,40 +123,47 @@ void CarAgency::addCarsFromFile(const std::string &fileName)
     }
     for (const auto &car : root)
     {
-        Car newCar(car["model"].asString(),car["year"].asInt(), car["price"].asFloat(), car["count"].asInt());
+        Car newCar(car["model"].asString(), car["year"].asInt(), car["price"].asFloat(), car["count"].asInt());
         addCar(newCar);
     }
 }
 
-void CarAgency::addUsersFromFile(const std::string &fileName) {
+void CarAgency::addUsersFromFile(const std::string &fileName)
+{
     std::ifstream file(fileName);
-    if (!file.is_open()) {
+    if (!file.is_open())
+    {
         std::cout << "Error: Unable to open file\n";
         return;
     }
 
     Json::Value root;
     Json::Reader reader;
-    if (!reader.parse(file, root)) {
+    if (!reader.parse(file, root))
+    {
         std::cout << "Error: Unable to parse JSON\n";
         return;
     }
 
-    for (const auto &user : root) {
+    for (const auto &user : root)
+    {
         addUser(User(user["username"].asString(), user["password"].asString(), user["wallet"].asInt()));
     }
 }
 
-void CarAgency::writeUsersToFile(std::string filename) {
+void CarAgency::writeUsersToFile(std::string filename)
+{
     Json::Value data(Json::objectValue);
-    for (const auto &user : users) {
+    for (const auto &user : users)
+    {
         Json::Value userData;
         userData["username"] = user.getUsername();
         userData["password"] = user.getPassword();
         userData["wallet"] = user.getWallet();
 
         Json::Value ownedCarModels(Json::arrayValue);
-        for (auto car : user.getOwnedCars()) {
+        for (auto car : user.getOwnedCars())
+        {
             ownedCarModels.append(car.getModel());
         }
         userData["cars"] = ownedCarModels;
@@ -162,29 +172,36 @@ void CarAgency::writeUsersToFile(std::string filename) {
     }
 
     std::ofstream file(filename);
-    if (file.is_open()) {
+    if (file.is_open())
+    {
         file << data;
         file.close();
-    } else {
+    }
+    else
+    {
         std::cout << "Error: Unable to open file\n";
     }
 }
 
-
-double CarAgency::getUserWallet(const std::string& filename, const std::string& userName) {
+double CarAgency::getUserWallet(const std::string &filename, const std::string &userName)
+{
     Json::Value data;
     std::ifstream file(filename);
 
-    if (file.is_open()) {
+    if (file.is_open())
+    {
         file >> data;
         file.close();
-    } else {
+    }
+    else
+    {
         std::cout << "Error: Unable to open file\n";
         return -1;
     }
 
     Json::Value userData = data[userName];
-    if (userData.isNull()) {
+    if (userData.isNull())
+    {
         std::cout << "Error: User not found\n";
         return -1;
     }
@@ -192,21 +209,25 @@ double CarAgency::getUserWallet(const std::string& filename, const std::string& 
     return userData["wallet"].asDouble();
 }
 
-
-void CarAgency::updatePurchasedCar(const std::string &filename, std::string carModel, const std::string &userName) {
+void CarAgency::updatePurchasedCar(const std::string &filename, std::string carModel, const std::string &userName)
+{
     Json::Value data;
     std::ifstream file(filename);
 
-    if (file.is_open()) {
+    if (file.is_open())
+    {
         file >> data;
         file.close();
-    } else {
+    }
+    else
+    {
         std::cout << "Error: Unable to open file\n";
         return;
     }
 
     Json::Value userData = data[userName];
-    if (userData.isNull()) {
+    if (userData.isNull())
+    {
         std::cout << "Error: User not found\n";
         return;
     }

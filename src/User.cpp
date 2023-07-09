@@ -1,6 +1,6 @@
 // User.cpp
-#include "User.hpp"
-#include "Car.hpp"
+#include "../include/User.hpp"
+#include "../include/Car.hpp"
 #include <algorithm>
 #include <string>
 #include <vector>
@@ -37,11 +37,13 @@ void User::setWallet(int wallet)
     this->wallet = wallet;
 }
 
-void User::setOwnedCars(const std::vector<Car>& cars) {
+void User::setOwnedCars(const std::vector<Car> &cars)
+{
     ownedCars = cars;
 }
 
-const std::vector<Car>& User::getOwnedCars() const {
+const std::vector<Car> &User::getOwnedCars() const
+{
     return ownedCars;
 }
 
@@ -61,7 +63,6 @@ std::string User::showPurchasedCars() const
     oss << "\n";
     return oss.str();
 }
-
 
 void User::addPurchasedCars(std::string model)
 {

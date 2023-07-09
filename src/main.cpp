@@ -4,9 +4,9 @@
 #include <fstream>
 #include <string>
 #include "json/json.h"
-#include "CarAgency.hpp"
-#include "Car.hpp"
-#include "User.hpp"
+#include "../include/CarAgency.hpp"
+#include "../include/Car.hpp"
+#include "../include/User.hpp"
 
 using namespace std;
 
@@ -83,7 +83,7 @@ int main()
                     Car &car = agency.findCar(model);
                     if (loggedInUser->getWallet() >= car.getPrice())
                     {
-                        if (agency.buyCar(*loggedInUser, model, pathOfUsersJSON,pathOfCarsJSON))
+                        if (agency.buyCar(*loggedInUser, model, pathOfUsersJSON, pathOfCarsJSON))
                         {
                             cout << "Car purchased successfully" << endl;
                         }

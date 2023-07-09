@@ -36,7 +36,7 @@
 		"year" : 2021
 	},
 	{
-		"count" : 9,
+		"count" : 8,
 		"model" : "Nissan",
 		"price" : 20000,
 		"year" : 2019
@@ -48,7 +48,7 @@
 		"year" : 2022
 	},
 	{
-		"count" : 7,
+		"count" : 4,
 		"model" : "Kia",
 		"price" : 26000,
 		"year" : 2020

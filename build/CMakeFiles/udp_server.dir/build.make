@@ -69,76 +69,76 @@ include CMakeFiles/udp_server.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/udp_server.dir/flags.make
 
-CMakeFiles/udp_server.dir/udp_server.cpp.o: CMakeFiles/udp_server.dir/flags.make
-CMakeFiles/udp_server.dir/udp_server.cpp.o: ../udp_server.cpp
-CMakeFiles/udp_server.dir/udp_server.cpp.o: CMakeFiles/udp_server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pooya/Desktop/CarAgentStore-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/udp_server.dir/udp_server.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/udp_server.dir/udp_server.cpp.o -MF CMakeFiles/udp_server.dir/udp_server.cpp.o.d -o CMakeFiles/udp_server.dir/udp_server.cpp.o -c /home/pooya/Desktop/CarAgentStore-master/udp_server.cpp
+CMakeFiles/udp_server.dir/src/server/udp_server.cpp.o: CMakeFiles/udp_server.dir/flags.make
+CMakeFiles/udp_server.dir/src/server/udp_server.cpp.o: ../src/server/udp_server.cpp
+CMakeFiles/udp_server.dir/src/server/udp_server.cpp.o: CMakeFiles/udp_server.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pooya/Desktop/CarAgentStore-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/udp_server.dir/src/server/udp_server.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/udp_server.dir/src/server/udp_server.cpp.o -MF CMakeFiles/udp_server.dir/src/server/udp_server.cpp.o.d -o CMakeFiles/udp_server.dir/src/server/udp_server.cpp.o -c /home/pooya/Desktop/CarAgentStore-master/src/server/udp_server.cpp
 
-CMakeFiles/udp_server.dir/udp_server.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/udp_server.dir/udp_server.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pooya/Desktop/CarAgentStore-master/udp_server.cpp > CMakeFiles/udp_server.dir/udp_server.cpp.i
+CMakeFiles/udp_server.dir/src/server/udp_server.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/udp_server.dir/src/server/udp_server.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pooya/Desktop/CarAgentStore-master/src/server/udp_server.cpp > CMakeFiles/udp_server.dir/src/server/udp_server.cpp.i
 
-CMakeFiles/udp_server.dir/udp_server.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/udp_server.dir/udp_server.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pooya/Desktop/CarAgentStore-master/udp_server.cpp -o CMakeFiles/udp_server.dir/udp_server.cpp.s
+CMakeFiles/udp_server.dir/src/server/udp_server.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/udp_server.dir/src/server/udp_server.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pooya/Desktop/CarAgentStore-master/src/server/udp_server.cpp -o CMakeFiles/udp_server.dir/src/server/udp_server.cpp.s
 
-CMakeFiles/udp_server.dir/Car.cpp.o: CMakeFiles/udp_server.dir/flags.make
-CMakeFiles/udp_server.dir/Car.cpp.o: ../Car.cpp
-CMakeFiles/udp_server.dir/Car.cpp.o: CMakeFiles/udp_server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pooya/Desktop/CarAgentStore-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/udp_server.dir/Car.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/udp_server.dir/Car.cpp.o -MF CMakeFiles/udp_server.dir/Car.cpp.o.d -o CMakeFiles/udp_server.dir/Car.cpp.o -c /home/pooya/Desktop/CarAgentStore-master/Car.cpp
+CMakeFiles/udp_server.dir/src/Car.cpp.o: CMakeFiles/udp_server.dir/flags.make
+CMakeFiles/udp_server.dir/src/Car.cpp.o: ../src/Car.cpp
+CMakeFiles/udp_server.dir/src/Car.cpp.o: CMakeFiles/udp_server.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pooya/Desktop/CarAgentStore-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/udp_server.dir/src/Car.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/udp_server.dir/src/Car.cpp.o -MF CMakeFiles/udp_server.dir/src/Car.cpp.o.d -o CMakeFiles/udp_server.dir/src/Car.cpp.o -c /home/pooya/Desktop/CarAgentStore-master/src/Car.cpp
 
-CMakeFiles/udp_server.dir/Car.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/udp_server.dir/Car.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pooya/Desktop/CarAgentStore-master/Car.cpp > CMakeFiles/udp_server.dir/Car.cpp.i
+CMakeFiles/udp_server.dir/src/Car.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/udp_server.dir/src/Car.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pooya/Desktop/CarAgentStore-master/src/Car.cpp > CMakeFiles/udp_server.dir/src/Car.cpp.i
 
-CMakeFiles/udp_server.dir/Car.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/udp_server.dir/Car.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pooya/Desktop/CarAgentStore-master/Car.cpp -o CMakeFiles/udp_server.dir/Car.cpp.s
+CMakeFiles/udp_server.dir/src/Car.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/udp_server.dir/src/Car.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pooya/Desktop/CarAgentStore-master/src/Car.cpp -o CMakeFiles/udp_server.dir/src/Car.cpp.s
 
-CMakeFiles/udp_server.dir/User.cpp.o: CMakeFiles/udp_server.dir/flags.make
-CMakeFiles/udp_server.dir/User.cpp.o: ../User.cpp
-CMakeFiles/udp_server.dir/User.cpp.o: CMakeFiles/udp_server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pooya/Desktop/CarAgentStore-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/udp_server.dir/User.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/udp_server.dir/User.cpp.o -MF CMakeFiles/udp_server.dir/User.cpp.o.d -o CMakeFiles/udp_server.dir/User.cpp.o -c /home/pooya/Desktop/CarAgentStore-master/User.cpp
+CMakeFiles/udp_server.dir/src/User.cpp.o: CMakeFiles/udp_server.dir/flags.make
+CMakeFiles/udp_server.dir/src/User.cpp.o: ../src/User.cpp
+CMakeFiles/udp_server.dir/src/User.cpp.o: CMakeFiles/udp_server.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pooya/Desktop/CarAgentStore-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/udp_server.dir/src/User.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/udp_server.dir/src/User.cpp.o -MF CMakeFiles/udp_server.dir/src/User.cpp.o.d -o CMakeFiles/udp_server.dir/src/User.cpp.o -c /home/pooya/Desktop/CarAgentStore-master/src/User.cpp
 
-CMakeFiles/udp_server.dir/User.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/udp_server.dir/User.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pooya/Desktop/CarAgentStore-master/User.cpp > CMakeFiles/udp_server.dir/User.cpp.i
+CMakeFiles/udp_server.dir/src/User.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/udp_server.dir/src/User.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pooya/Desktop/CarAgentStore-master/src/User.cpp > CMakeFiles/udp_server.dir/src/User.cpp.i
 
-CMakeFiles/udp_server.dir/User.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/udp_server.dir/User.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pooya/Desktop/CarAgentStore-master/User.cpp -o CMakeFiles/udp_server.dir/User.cpp.s
+CMakeFiles/udp_server.dir/src/User.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/udp_server.dir/src/User.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pooya/Desktop/CarAgentStore-master/src/User.cpp -o CMakeFiles/udp_server.dir/src/User.cpp.s
 
-CMakeFiles/udp_server.dir/CarAgency.cpp.o: CMakeFiles/udp_server.dir/flags.make
-CMakeFiles/udp_server.dir/CarAgency.cpp.o: ../CarAgency.cpp
-CMakeFiles/udp_server.dir/CarAgency.cpp.o: CMakeFiles/udp_server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pooya/Desktop/CarAgentStore-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/udp_server.dir/CarAgency.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/udp_server.dir/CarAgency.cpp.o -MF CMakeFiles/udp_server.dir/CarAgency.cpp.o.d -o CMakeFiles/udp_server.dir/CarAgency.cpp.o -c /home/pooya/Desktop/CarAgentStore-master/CarAgency.cpp
+CMakeFiles/udp_server.dir/src/CarAgency.cpp.o: CMakeFiles/udp_server.dir/flags.make
+CMakeFiles/udp_server.dir/src/CarAgency.cpp.o: ../src/CarAgency.cpp
+CMakeFiles/udp_server.dir/src/CarAgency.cpp.o: CMakeFiles/udp_server.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pooya/Desktop/CarAgentStore-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/udp_server.dir/src/CarAgency.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/udp_server.dir/src/CarAgency.cpp.o -MF CMakeFiles/udp_server.dir/src/CarAgency.cpp.o.d -o CMakeFiles/udp_server.dir/src/CarAgency.cpp.o -c /home/pooya/Desktop/CarAgentStore-master/src/CarAgency.cpp
 
-CMakeFiles/udp_server.dir/CarAgency.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/udp_server.dir/CarAgency.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pooya/Desktop/CarAgentStore-master/CarAgency.cpp > CMakeFiles/udp_server.dir/CarAgency.cpp.i
+CMakeFiles/udp_server.dir/src/CarAgency.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/udp_server.dir/src/CarAgency.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pooya/Desktop/CarAgentStore-master/src/CarAgency.cpp > CMakeFiles/udp_server.dir/src/CarAgency.cpp.i
 
-CMakeFiles/udp_server.dir/CarAgency.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/udp_server.dir/CarAgency.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pooya/Desktop/CarAgentStore-master/CarAgency.cpp -o CMakeFiles/udp_server.dir/CarAgency.cpp.s
+CMakeFiles/udp_server.dir/src/CarAgency.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/udp_server.dir/src/CarAgency.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pooya/Desktop/CarAgentStore-master/src/CarAgency.cpp -o CMakeFiles/udp_server.dir/src/CarAgency.cpp.s
 
 # Object files for target udp_server
 udp_server_OBJECTS = \
-"CMakeFiles/udp_server.dir/udp_server.cpp.o" \
-"CMakeFiles/udp_server.dir/Car.cpp.o" \
-"CMakeFiles/udp_server.dir/User.cpp.o" \
-"CMakeFiles/udp_server.dir/CarAgency.cpp.o"
+"CMakeFiles/udp_server.dir/src/server/udp_server.cpp.o" \
+"CMakeFiles/udp_server.dir/src/Car.cpp.o" \
+"CMakeFiles/udp_server.dir/src/User.cpp.o" \
+"CMakeFiles/udp_server.dir/src/CarAgency.cpp.o"
 
 # External object files for target udp_server
 udp_server_EXTERNAL_OBJECTS =
 
-../output/udp_server: CMakeFiles/udp_server.dir/udp_server.cpp.o
-../output/udp_server: CMakeFiles/udp_server.dir/Car.cpp.o
-../output/udp_server: CMakeFiles/udp_server.dir/User.cpp.o
-../output/udp_server: CMakeFiles/udp_server.dir/CarAgency.cpp.o
+../output/udp_server: CMakeFiles/udp_server.dir/src/server/udp_server.cpp.o
+../output/udp_server: CMakeFiles/udp_server.dir/src/Car.cpp.o
+../output/udp_server: CMakeFiles/udp_server.dir/src/User.cpp.o
+../output/udp_server: CMakeFiles/udp_server.dir/src/CarAgency.cpp.o
 ../output/udp_server: CMakeFiles/udp_server.dir/build.make
 ../output/udp_server: CMakeFiles/udp_server.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pooya/Desktop/CarAgentStore-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable ../output/udp_server"

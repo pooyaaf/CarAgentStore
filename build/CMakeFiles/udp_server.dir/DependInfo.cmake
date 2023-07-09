@@ -8,10 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/pooya/Desktop/CarAgentStore-master/Car.cpp" "CMakeFiles/udp_server.dir/Car.cpp.o" "gcc" "CMakeFiles/udp_server.dir/Car.cpp.o.d"
-  "/home/pooya/Desktop/CarAgentStore-master/CarAgency.cpp" "CMakeFiles/udp_server.dir/CarAgency.cpp.o" "gcc" "CMakeFiles/udp_server.dir/CarAgency.cpp.o.d"
-  "/home/pooya/Desktop/CarAgentStore-master/User.cpp" "CMakeFiles/udp_server.dir/User.cpp.o" "gcc" "CMakeFiles/udp_server.dir/User.cpp.o.d"
-  "/home/pooya/Desktop/CarAgentStore-master/udp_server.cpp" "CMakeFiles/udp_server.dir/udp_server.cpp.o" "gcc" "CMakeFiles/udp_server.dir/udp_server.cpp.o.d"
+  "/home/pooya/Desktop/CarAgentStore-master/src/Car.cpp" "CMakeFiles/udp_server.dir/src/Car.cpp.o" "gcc" "CMakeFiles/udp_server.dir/src/Car.cpp.o.d"
+  "/home/pooya/Desktop/CarAgentStore-master/src/CarAgency.cpp" "CMakeFiles/udp_server.dir/src/CarAgency.cpp.o" "gcc" "CMakeFiles/udp_server.dir/src/CarAgency.cpp.o.d"
+  "/home/pooya/Desktop/CarAgentStore-master/src/User.cpp" "CMakeFiles/udp_server.dir/src/User.cpp.o" "gcc" "CMakeFiles/udp_server.dir/src/User.cpp.o.d"
+  "/home/pooya/Desktop/CarAgentStore-master/src/server/udp_server.cpp" "CMakeFiles/udp_server.dir/src/server/udp_server.cpp.o" "gcc" "CMakeFiles/udp_server.dir/src/server/udp_server.cpp.o.d"
   )
 
 # Targets to which this target links.

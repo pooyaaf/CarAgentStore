@@ -9,39 +9,39 @@ include_directories(${JSONCPP_INCLUDE_DIR})
 
 # Add server source files 
 set(UDP_SERVER_SOURCES 
-    udp_server.cpp 
-    Car.cpp 
-    User.cpp 
-    CarAgency.cpp 
+    src/server/udp_server.cpp 
+    src/Car.cpp 
+    src/User.cpp 
+    src/CarAgency.cpp 
 ) 
 
 set(TCP_SERVER_SOURCES 
-    tcp_server.cpp
-    Car.cpp 
-    User.cpp 
-    CarAgency.cpp 
+    src/server/tcp_server.cpp
+    src/Car.cpp 
+    src/User.cpp 
+    src/CarAgency.cpp 
 ) 
 
 # Add client source files 
 set(UDP_CLIENT_SOURCES 
-    udp_client.cpp 
-    Car.cpp 
-    User.cpp 
-    CarAgency.cpp 
+    src/client/udp_client.cpp 
+    src/Car.cpp 
+    src/User.cpp 
+    src/CarAgency.cpp 
 ) 
 
 set(TCP_CLIENT_SOURCES 
-    tcp_client.cpp
-    Car.cpp 
-    User.cpp 
-    CarAgency.cpp 
+    src/client/tcp_client.cpp
+    src/Car.cpp 
+    src/User.cpp 
+    src/CarAgency.cpp 
 ) 
 
 # Add all header files 
 set(HEADERS 
-    Car.hpp 
-    User.hpp 
-    CarAgency.hpp 
+    include/Car.hpp 
+    include/User.hpp 
+    include/CarAgency.hpp 
 ) 
 
 # Add all JSON files 

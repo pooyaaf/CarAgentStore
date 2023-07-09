@@ -69,76 +69,76 @@ include CMakeFiles/tcp_client.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/tcp_client.dir/flags.make
 
-CMakeFiles/tcp_client.dir/tcp_client.cpp.o: CMakeFiles/tcp_client.dir/flags.make
-CMakeFiles/tcp_client.dir/tcp_client.cpp.o: ../tcp_client.cpp
-CMakeFiles/tcp_client.dir/tcp_client.cpp.o: CMakeFiles/tcp_client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pooya/Desktop/CarAgentStore-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/tcp_client.dir/tcp_client.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tcp_client.dir/tcp_client.cpp.o -MF CMakeFiles/tcp_client.dir/tcp_client.cpp.o.d -o CMakeFiles/tcp_client.dir/tcp_client.cpp.o -c /home/pooya/Desktop/CarAgentStore-master/tcp_client.cpp
+CMakeFiles/tcp_client.dir/src/client/tcp_client.cpp.o: CMakeFiles/tcp_client.dir/flags.make
+CMakeFiles/tcp_client.dir/src/client/tcp_client.cpp.o: ../src/client/tcp_client.cpp
+CMakeFiles/tcp_client.dir/src/client/tcp_client.cpp.o: CMakeFiles/tcp_client.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pooya/Desktop/CarAgentStore-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/tcp_client.dir/src/client/tcp_client.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tcp_client.dir/src/client/tcp_client.cpp.o -MF CMakeFiles/tcp_client.dir/src/client/tcp_client.cpp.o.d -o CMakeFiles/tcp_client.dir/src/client/tcp_client.cpp.o -c /home/pooya/Desktop/CarAgentStore-master/src/client/tcp_client.cpp
 
-CMakeFiles/tcp_client.dir/tcp_client.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tcp_client.dir/tcp_client.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pooya/Desktop/CarAgentStore-master/tcp_client.cpp > CMakeFiles/tcp_client.dir/tcp_client.cpp.i
+CMakeFiles/tcp_client.dir/src/client/tcp_client.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tcp_client.dir/src/client/tcp_client.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pooya/Desktop/CarAgentStore-master/src/client/tcp_client.cpp > CMakeFiles/tcp_client.dir/src/client/tcp_client.cpp.i
 
-CMakeFiles/tcp_client.dir/tcp_client.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tcp_client.dir/tcp_client.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pooya/Desktop/CarAgentStore-master/tcp_client.cpp -o CMakeFiles/tcp_client.dir/tcp_client.cpp.s
+CMakeFiles/tcp_client.dir/src/client/tcp_client.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tcp_client.dir/src/client/tcp_client.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pooya/Desktop/CarAgentStore-master/src/client/tcp_client.cpp -o CMakeFiles/tcp_client.dir/src/client/tcp_client.cpp.s
 
-CMakeFiles/tcp_client.dir/Car.cpp.o: CMakeFiles/tcp_client.dir/flags.make
-CMakeFiles/tcp_client.dir/Car.cpp.o: ../Car.cpp
-CMakeFiles/tcp_client.dir/Car.cpp.o: CMakeFiles/tcp_client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pooya/Desktop/CarAgentStore-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/tcp_client.dir/Car.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tcp_client.dir/Car.cpp.o -MF CMakeFiles/tcp_client.dir/Car.cpp.o.d -o CMakeFiles/tcp_client.dir/Car.cpp.o -c /home/pooya/Desktop/CarAgentStore-master/Car.cpp
+CMakeFiles/tcp_client.dir/src/Car.cpp.o: CMakeFiles/tcp_client.dir/flags.make
+CMakeFiles/tcp_client.dir/src/Car.cpp.o: ../src/Car.cpp
+CMakeFiles/tcp_client.dir/src/Car.cpp.o: CMakeFiles/tcp_client.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pooya/Desktop/CarAgentStore-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/tcp_client.dir/src/Car.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tcp_client.dir/src/Car.cpp.o -MF CMakeFiles/tcp_client.dir/src/Car.cpp.o.d -o CMakeFiles/tcp_client.dir/src/Car.cpp.o -c /home/pooya/Desktop/CarAgentStore-master/src/Car.cpp
 
-CMakeFiles/tcp_client.dir/Car.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tcp_client.dir/Car.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pooya/Desktop/CarAgentStore-master/Car.cpp > CMakeFiles/tcp_client.dir/Car.cpp.i
+CMakeFiles/tcp_client.dir/src/Car.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tcp_client.dir/src/Car.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pooya/Desktop/CarAgentStore-master/src/Car.cpp > CMakeFiles/tcp_client.dir/src/Car.cpp.i
 
-CMakeFiles/tcp_client.dir/Car.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tcp_client.dir/Car.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pooya/Desktop/CarAgentStore-master/Car.cpp -o CMakeFiles/tcp_client.dir/Car.cpp.s
+CMakeFiles/tcp_client.dir/src/Car.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tcp_client.dir/src/Car.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pooya/Desktop/CarAgentStore-master/src/Car.cpp -o CMakeFiles/tcp_client.dir/src/Car.cpp.s
 
-CMakeFiles/tcp_client.dir/User.cpp.o: CMakeFiles/tcp_client.dir/flags.make
-CMakeFiles/tcp_client.dir/User.cpp.o: ../User.cpp
-CMakeFiles/tcp_client.dir/User.cpp.o: CMakeFiles/tcp_client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pooya/Desktop/CarAgentStore-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/tcp_client.dir/User.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tcp_client.dir/User.cpp.o -MF CMakeFiles/tcp_client.dir/User.cpp.o.d -o CMakeFiles/tcp_client.dir/User.cpp.o -c /home/pooya/Desktop/CarAgentStore-master/User.cpp
+CMakeFiles/tcp_client.dir/src/User.cpp.o: CMakeFiles/tcp_client.dir/flags.make
+CMakeFiles/tcp_client.dir/src/User.cpp.o: ../src/User.cpp
+CMakeFiles/tcp_client.dir/src/User.cpp.o: CMakeFiles/tcp_client.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pooya/Desktop/CarAgentStore-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/tcp_client.dir/src/User.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tcp_client.dir/src/User.cpp.o -MF CMakeFiles/tcp_client.dir/src/User.cpp.o.d -o CMakeFiles/tcp_client.dir/src/User.cpp.o -c /home/pooya/Desktop/CarAgentStore-master/src/User.cpp
 
-CMakeFiles/tcp_client.dir/User.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tcp_client.dir/User.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pooya/Desktop/CarAgentStore-master/User.cpp > CMakeFiles/tcp_client.dir/User.cpp.i
+CMakeFiles/tcp_client.dir/src/User.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tcp_client.dir/src/User.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pooya/Desktop/CarAgentStore-master/src/User.cpp > CMakeFiles/tcp_client.dir/src/User.cpp.i
 
-CMakeFiles/tcp_client.dir/User.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tcp_client.dir/User.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pooya/Desktop/CarAgentStore-master/User.cpp -o CMakeFiles/tcp_client.dir/User.cpp.s
+CMakeFiles/tcp_client.dir/src/User.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tcp_client.dir/src/User.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pooya/Desktop/CarAgentStore-master/src/User.cpp -o CMakeFiles/tcp_client.dir/src/User.cpp.s
 
-CMakeFiles/tcp_client.dir/CarAgency.cpp.o: CMakeFiles/tcp_client.dir/flags.make
-CMakeFiles/tcp_client.dir/CarAgency.cpp.o: ../CarAgency.cpp
-CMakeFiles/tcp_client.dir/CarAgency.cpp.o: CMakeFiles/tcp_client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pooya/Desktop/CarAgentStore-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/tcp_client.dir/CarAgency.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tcp_client.dir/CarAgency.cpp.o -MF CMakeFiles/tcp_client.dir/CarAgency.cpp.o.d -o CMakeFiles/tcp_client.dir/CarAgency.cpp.o -c /home/pooya/Desktop/CarAgentStore-master/CarAgency.cpp
+CMakeFiles/tcp_client.dir/src/CarAgency.cpp.o: CMakeFiles/tcp_client.dir/flags.make
+CMakeFiles/tcp_client.dir/src/CarAgency.cpp.o: ../src/CarAgency.cpp
+CMakeFiles/tcp_client.dir/src/CarAgency.cpp.o: CMakeFiles/tcp_client.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pooya/Desktop/CarAgentStore-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/tcp_client.dir/src/CarAgency.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tcp_client.dir/src/CarAgency.cpp.o -MF CMakeFiles/tcp_client.dir/src/CarAgency.cpp.o.d -o CMakeFiles/tcp_client.dir/src/CarAgency.cpp.o -c /home/pooya/Desktop/CarAgentStore-master/src/CarAgency.cpp
 
-CMakeFiles/tcp_client.dir/CarAgency.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tcp_client.dir/CarAgency.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pooya/Desktop/CarAgentStore-master/CarAgency.cpp > CMakeFiles/tcp_client.dir/CarAgency.cpp.i
+CMakeFiles/tcp_client.dir/src/CarAgency.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tcp_client.dir/src/CarAgency.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pooya/Desktop/CarAgentStore-master/src/CarAgency.cpp > CMakeFiles/tcp_client.dir/src/CarAgency.cpp.i
 
-CMakeFiles/tcp_client.dir/CarAgency.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tcp_client.dir/CarAgency.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pooya/Desktop/CarAgentStore-master/CarAgency.cpp -o CMakeFiles/tcp_client.dir/CarAgency.cpp.s
+CMakeFiles/tcp_client.dir/src/CarAgency.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tcp_client.dir/src/CarAgency.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pooya/Desktop/CarAgentStore-master/src/CarAgency.cpp -o CMakeFiles/tcp_client.dir/src/CarAgency.cpp.s
 
 # Object files for target tcp_client
 tcp_client_OBJECTS = \
-"CMakeFiles/tcp_client.dir/tcp_client.cpp.o" \
-"CMakeFiles/tcp_client.dir/Car.cpp.o" \
-"CMakeFiles/tcp_client.dir/User.cpp.o" \
-"CMakeFiles/tcp_client.dir/CarAgency.cpp.o"
+"CMakeFiles/tcp_client.dir/src/client/tcp_client.cpp.o" \
+"CMakeFiles/tcp_client.dir/src/Car.cpp.o" \
+"CMakeFiles/tcp_client.dir/src/User.cpp.o" \
+"CMakeFiles/tcp_client.dir/src/CarAgency.cpp.o"
 
 # External object files for target tcp_client
 tcp_client_EXTERNAL_OBJECTS =
 
-../output/tcp_client: CMakeFiles/tcp_client.dir/tcp_client.cpp.o
-../output/tcp_client: CMakeFiles/tcp_client.dir/Car.cpp.o
-../output/tcp_client: CMakeFiles/tcp_client.dir/User.cpp.o
-../output/tcp_client: CMakeFiles/tcp_client.dir/CarAgency.cpp.o
+../output/tcp_client: CMakeFiles/tcp_client.dir/src/client/tcp_client.cpp.o
+../output/tcp_client: CMakeFiles/tcp_client.dir/src/Car.cpp.o
+../output/tcp_client: CMakeFiles/tcp_client.dir/src/User.cpp.o
+../output/tcp_client: CMakeFiles/tcp_client.dir/src/CarAgency.cpp.o
 ../output/tcp_client: CMakeFiles/tcp_client.dir/build.make
 ../output/tcp_client: CMakeFiles/tcp_client.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pooya/Desktop/CarAgentStore-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable ../output/tcp_client"

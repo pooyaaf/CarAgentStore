@@ -14,9 +14,9 @@ int main()
 {
 
     CarAgency agency;
-    string pathOfCarsJSON = "../car.json";
+    string pathOfCarsJSON = "../include/json/car.json";
     agency.addCarsFromFile(pathOfCarsJSON);
-    string pathOfUsersJSON = "../user.json";
+    string pathOfUsersJSON = "../include/json/user.json";
     agency.addUsersFromFile(pathOfUsersJSON);
 
     int userChoice = 0;

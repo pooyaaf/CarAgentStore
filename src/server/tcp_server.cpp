@@ -25,9 +25,9 @@ int main(int argc, char *argv[])
 {
     // Create a CarAgency instance
     CarAgency agency;
-    string pathOfCarsJSON = "../car.json";
+    string pathOfCarsJSON = "../include/json/car.json";
     agency.addCarsFromFile(pathOfCarsJSON);
-    string pathOfUsersJSON = "../user.json";
+    string pathOfUsersJSON = "../include/json/user.json";
     agency.addUsersFromFile(pathOfUsersJSON);
     // for the server, we only need to specify a port number
     if (argc != 2)

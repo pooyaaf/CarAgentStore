@@ -46,8 +46,8 @@ set(HEADERS
 
 # Add all JSON files 
 set(JSON_FILES 
-    car.json 
-    user.json 
+    include/json/car.json 
+    include/json/user.json 
 ) 
 
 # Create server executables 

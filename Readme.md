@@ -50,16 +50,21 @@ There are 4 files, in the output folder. First run server files using specified 
 ![user JSON](include/Image/usr1.png)
 
 - User login:
+  
   ![user Login](include/Image/userlogin.png)
 
 - User wallet before buying a car:
+  
   ![user wallet B](include/Image/userwallet.png)
 
 - User purchase:
+  
   ![user purchase](include/Image/purchasecar.png)
 
 - User wallet after buying a car:
+  
   ![user wallet A](include/Image/walletafter.png)
 
 - User JSON status after buying a car:
+  
   ![user JSON A](include/Image/user2.png)
